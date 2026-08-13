@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         <div className="hero-side">
           <div className="photo-card">
-            <img src="/elton-profile.jpg" alt="Elton Malumbot" className="profile-photo" />
+            <img src="https://avatars.githubusercontent.com/u/118357175?v=4" alt="Elton Malumbot" className="profile-photo" referrerPolicy="no-referrer" />
           </div>
           <aside className="hero-card">
             <p className="muted tiny">CURRENT FOCUS</p>
