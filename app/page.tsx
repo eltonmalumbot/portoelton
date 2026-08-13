@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         <div className="hero-side">
           <div className="photo-card">
-            <img src="/elton-profile.svg" alt="Elton Malumbot" className="profile-photo" />
+            <img src="/elton-profile.jpg" alt="Elton Malumbot" className="profile-photo" />
           </div>
           <aside className="hero-card">
             <p className="muted tiny">CURRENT FOCUS</p>
@@ -48,12 +48,12 @@ export default function Home() {
             <p className="subtitle">{featured.subtitle}</p>
             <p className="muted copy">{featured.summary}</p>
             <div className="tags">{featured.stack.slice(0,5).map(t => <span key={t}>{t}</span>)}</div>
-            <Link className="link" href={`/work/${featured.slug}`}>Read case study ↗</Link>
+            <div className="card-actions"><Link className="link" href={`/work/${featured.slug}`}>Read case study ↗</Link><span className="muted">Private source</span></div>
           </div>
           <div className="mock"><div className="mock-window"><div className="mock-top">● ● ● <span>Moodle SuperTools</span></div><div className="mock-body"><aside>SuperTools<br/><b>Bulk Users</b><br/>Cohorts<br/>Courses<br/>Audit<br/>Logs</aside><section><i></i><div><span></span><span></span><span></span></div><p></p><p></p><p></p></section></div></div></div>
         </article>
 
-        <div className="grid">{others.map(p => <article className="card" key={p.slug}><div className="card-meta"><span>{p.index}</span><span>{p.status}</span></div><p className="eyebrow small">{p.eyebrow}</p><h3>{p.title}</h3><p className="subtitle">{p.subtitle}</p><p className="muted copy">{p.summary}</p><div className="tags">{p.stack.slice(0,4).map(t => <span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${p.slug}`}>Case study ↗</Link>{p.liveUrl && <a className="muted" href={p.liveUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></article>)}</div>
+        <div className="grid">{others.map(p => <article className="card" key={p.slug}><div className="card-meta"><span>{p.index}</span><span>{p.status}</span></div><p className="eyebrow small">{p.eyebrow}</p><h3>{p.title}</h3><p className="subtitle">{p.subtitle}</p><p className="muted copy">{p.summary}</p><div className="tags">{p.stack.slice(0,4).map(t => <span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${p.slug}`}>Case study ↗</Link>{p.repoUrl && <a className="link" href={p.repoUrl} target="_blank" rel="noreferrer">GitHub{p.repoPrivate ? " 🔒" : ""} ↗</a>}{p.liveUrl && <a className="muted" href={p.liveUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></article>)}</div>
       </section>
 
       <section className="dark"><div className="section shell two"><div><p className="eyebrow pale">WHAT I BRING</p><h2>Not only administration. Not only development.</h2><p>I understand how people use an LMS, then translate that into safer workflows, automation, tools, and technical improvements.</p></div><div className="skills">{skills.map((s,i)=><div key={s}><span>{String(i+1).padStart(2,"0")}</span><b>{s}</b></div>)}</div></div></section>
