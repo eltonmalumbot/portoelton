@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { projects } from "../data/projects";
 
@@ -29,7 +28,7 @@ export default function Home() {
         </div>
         <div className="hero-side">
           <div className="photo-card">
-            <Image src="/elton-profile.svg" alt="Elton Malumbot" width={640} height={640} priority />
+            <img src="/elton-profile.svg" alt="Elton Malumbot" className="profile-photo" />
           </div>
           <aside className="hero-card">
             <p className="muted tiny">CURRENT FOCUS</p>
