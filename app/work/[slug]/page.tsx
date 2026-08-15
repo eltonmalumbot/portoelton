@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getProject, projects } from "../../../data/projects";
 
 const galleries: Record<string, string[]> = {
-  supertools: ["/projects/supertools-01.svg","/projects/supertools-02.svg"],
+  supertools: ["/projects/supertools-overview.svg"],
   unifair: ["/projects/unifair-01.svg","/projects/unifair-02.svg"],
   "moodle-service-portal": ["/projects/msp-01.svg","/projects/msp-02.svg"],
   cariskolah: ["/projects/cariskolah-01.svg","/projects/cariskolah-02.svg"],
