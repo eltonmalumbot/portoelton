@@ -129,16 +129,8 @@ export async function getPortfolioProject(slug: string) {
 }
 
 export async function getProjectImages(slug: string) {
-  const fallback: Record<string, string[]> = {
-    supertools: ["/projects/supertools-overview.svg", "/projects/supertools-01.svg", "/projects/supertools-02.svg"],
-    unifair: ["/projects/unifair-01.svg", "/projects/unifair-02.svg"],
-    "moodle-service-portal": ["/projects/msp-01.svg", "/projects/msp-02.svg"],
-    cariskolah: ["/projects/cariskolah-01.svg", "/projects/cariskolah-02.svg"],
-    pindailoker: ["/projects/pindailoker-01.svg"],
-    prankjessica: ["/projects/prankjessica-01.svg"],
-  };
   const sql = db();
-  if (!sql) return fallback[slug] || [];
+  if (!sql) return [];
   try {
     const rows = await sql`
       SELECT i.image_url
@@ -147,9 +139,8 @@ export async function getProjectImages(slug: string) {
       WHERE p.slug = ${slug}
       ORDER BY i.sort_order ASC
     `;
-    const images = (rows as any[]).map((r) => r.image_url).filter(Boolean);
-    return images.length ? images : (fallback[slug] || []);
+    return (rows as any[]).map((r) => r.image_url).filter(Boolean);
   } catch {
-    return fallback[slug] || [];
+    return [];
   }
 }
