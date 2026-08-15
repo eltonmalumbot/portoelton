@@ -13,7 +13,7 @@ const certificates = [
 ];
 
 const projectImages: Record<string, string> = {
-  supertools: "/projects/supertools-01.svg",
+  supertools: "/projects/supertools-overview.svg",
   unifair: "/projects/unifair-01.svg",
   "moodle-service-portal": "/projects/msp-01.svg",
   cariskolah: "/projects/cariskolah-01.svg",
