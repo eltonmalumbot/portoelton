@@ -130,11 +130,12 @@ export async function getPortfolioProject(slug: string) {
 
 export async function getProjectImages(slug: string) {
   const fallback: Record<string, string[]> = {
-    supertools: ["/projects/supertools-overview.svg"],
-    unifair: ["/projects/unifair-01.svg"],
-    "moodle-service-portal": ["/projects/msp-01.svg"],
-    cariskolah: ["/projects/cariskolah-01.svg"],
+    supertools: ["/projects/supertools-overview.svg", "/projects/supertools-01.svg", "/projects/supertools-02.svg"],
+    unifair: ["/projects/unifair-01.svg", "/projects/unifair-02.svg"],
+    "moodle-service-portal": ["/projects/msp-01.svg", "/projects/msp-02.svg"],
+    cariskolah: ["/projects/cariskolah-01.svg", "/projects/cariskolah-02.svg"],
     pindailoker: ["/projects/pindailoker-01.svg"],
+    prankjessica: ["/projects/prankjessica-01.svg"],
   };
   const sql = db();
   if (!sql) return fallback[slug] || [];
