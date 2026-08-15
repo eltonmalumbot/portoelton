@@ -42,6 +42,22 @@ const fallbackCertificates: Certificate[] = [
   { title: "Certificate Title", issuer: "Issuing organization", year: "Year", description: "Credential links and certificate images can be stored through the portfolio backend." },
 ];
 
+const fallbackProjectImages: Record<string, string[]> = {
+  supertools: [
+    "/projects/supertools/cover.webp",
+    "/projects/supertools/bulk-users.webp",
+  ],
+  unifair: [
+    "/projects/unifair/cover.webp",
+    "/projects/unifair/student-view.webp",
+  ],
+  "moodle-service-portal": [
+    "/projects/moodle-service-portal/cover.webp",
+    "/projects/moodle-service-portal/users.webp",
+    "/projects/moodle-service-portal/stats.webp",
+  ],
+};
+
 function db() {
   return process.env.DATABASE_URL ? neon(process.env.DATABASE_URL) : null;
 }
@@ -129,8 +145,9 @@ export async function getPortfolioProject(slug: string) {
 }
 
 export async function getProjectImages(slug: string) {
+  const fallback = fallbackProjectImages[slug] ?? [];
   const sql = db();
-  if (!sql) return [];
+  if (!sql) return fallback;
   try {
     const rows = await sql`
       SELECT i.image_url
@@ -139,8 +156,9 @@ export async function getProjectImages(slug: string) {
       WHERE p.slug = ${slug}
       ORDER BY i.sort_order ASC
     `;
-    return (rows as any[]).map((r) => r.image_url).filter(Boolean);
+    const images = (rows as any[]).map((r) => r.image_url).filter(Boolean);
+    return images.length ? images : fallback;
   } catch {
-    return [];
+    return fallback;
   }
 }
