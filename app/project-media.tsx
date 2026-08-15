@@ -1,18 +1,24 @@
 import Link from "next/link";
 import type { Project } from "../data/projects";
 
+const projectScreenshots: Record<string, string> = {
+  supertools: "/projects/supertools/cover.webp",
+  unifair: "/projects/unifair/cover.webp",
+  "moodle-service-portal": "/projects/moodle-service-portal/cover.webp",
+};
+
 const internalMedia: Record<string, { label: string; detail: string }> = {
   supertools: {
     label: "INTERNAL LMS TOOL",
-    detail: "Real interface screenshots are kept private or redacted to protect school and account data.",
+    detail: "Real interface screenshot with sensitive operational data excluded from the portfolio.",
   },
   unifair: {
     label: "CUSTOM MOODLE MODULE",
-    detail: "Project documentation and implementation details are shown in the case study without inventing interface screenshots.",
+    detail: "Real Moodle interface from the UniFair workflow.",
   },
   "moodle-service-portal": {
     label: "INTERNAL SERVICE PLATFORM",
-    detail: "Production screenshots are withheld because the application contains internal operational data.",
+    detail: "Real interface screenshot with personal and internal request data redacted.",
   },
 };
 
@@ -32,6 +38,19 @@ export default function ProjectMedia({ project, featured = false }: { project: P
         <div className="live-preview-topline"><span className="live-dot" /> LIVE WEBSITE</div>
         <a className="media-click-layer" href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live website`} />
       </div>
+    );
+  }
+
+  const screenshot = projectScreenshots[project.slug];
+  if (screenshot) {
+    return (
+      <Link href={`/work/${project.slug}`} className={`${className} screenshot-project-media`}>
+        <img src={screenshot} alt={`${project.title} real interface screenshot`} />
+        <div className="screenshot-project-label">
+          <span>REAL PROJECT SCREENSHOT</span>
+          <strong>{project.title}</strong>
+        </div>
+      </Link>
     );
   }
 
