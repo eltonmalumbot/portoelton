@@ -6,6 +6,22 @@ import ThemeToggle from "../../theme-toggle";
 
 export const dynamic = "force-dynamic";
 
+const localProjectImages: Record<string, string[]> = {
+  supertools: [
+    "/projects/supertools/cover.webp",
+    "/projects/supertools/bulk-users.webp",
+  ],
+  unifair: [
+    "/projects/unifair/cover.webp",
+    "/projects/unifair/student-view.webp",
+  ],
+  "moodle-service-portal": [
+    "/projects/moodle-service-portal/cover.webp",
+    "/projects/moodle-service-portal/stats.webp",
+    "/projects/moodle-service-portal/users.webp",
+  ],
+};
+
 export function generateStaticParams(){return fallbackProjects.map((project)=>({slug:project.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const project=await getPortfolioProject(slug);return project?{title:`${project.title} — Elton Malumbot`,description:project.summary}:{};}
 
@@ -13,7 +29,8 @@ export default async function ProjectPage({params}:{params:Promise<{slug:string}
   const {slug}=await params;
   const project=await getPortfolioProject(slug);
   if(!project)notFound();
-  const images=await getProjectImages(slug);
+  const dbImages=await getProjectImages(slug);
+  const images=dbImages.length>0 ? dbImages : (localProjectImages[slug] ?? []);
 
   return <main>
     <header className="header shell">
