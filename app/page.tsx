@@ -10,10 +10,10 @@ const skills = [
 
 const projectImages: Record<string, string> = {
   supertools: "/projects/supertools-overview.svg",
-  unifair: "/projects/unifair-hd.jpg",
-  "moodle-service-portal": "/projects/msp-hd.jpg",
-  cariskolah: "/projects/carisekolah-hd.jpg",
-  pindailoker: "/projects/pindailoker-hd.jpg",
+  unifair: "/projects/unifair-01.svg",
+  "moodle-service-portal": "/projects/msp-01.svg",
+  cariskolah: "/projects/cariskolah-01.svg",
+  pindailoker: "/projects/pindailoker-01.svg",
 };
 
 export default async function Home() {
