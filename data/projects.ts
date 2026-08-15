@@ -104,6 +104,23 @@ export const projects: Project[] = [
     liveUrl: "https://pindailoker.vercel.app",
     repoUrl: "https://github.com/eltonmalumbot/pindailoker",
     status: "Prototype / live demo"
+  },
+  {
+    slug: "prankjessica",
+    index: "06",
+    title: "Prank Jessica",
+    eyebrow: "Playful Side Project · Interactive Web",
+    subtitle: "Pixel-style interactive date invitation and mini-game experience",
+    summary: "A playful side project that turns a simple date invitation into an interactive pink pixel-style experience with playful UI behavior, eight mini-games, date planning, and a final personalized ticket.",
+    problem: "A normal message or static invitation would be forgettable. The idea was to make a small personal interaction feel surprising, playful, and memorable through the browser.",
+    solution: "I built a multi-step Next.js experience with a dodging No button, an eight-stage Love Quest, date and activity selection, and a final date ticket and note—all wrapped in a cohesive pixel-inspired visual system.",
+    role: ["Concept and interaction design", "Frontend development", "Game logic", "Responsive UI", "Vercel deployment"],
+    features: ["Dodging No-button interaction", "Eight mini-game Love Quest", "Catch Hearts and Love Maze", "Memory Match and Find My Heart", "Flappy Heart and Love Quiz", "Scratch Card and Date Wheel", "Date and activity selection", "Final personalized date ticket and note"],
+    stack: ["Next.js 16", "React 19", "JavaScript", "CSS", "Vercel"],
+    outcome: "Prank Jessica is intentionally presented as a playful side project. It shows experimentation with micro-interactions, stateful UI, lightweight game mechanics, responsive design, and turning a personal idea into a polished live web experience.",
+    liveUrl: "https://prankjessica.vercel.app/",
+    repoUrl: "https://github.com/eltonmalumbot/prankjessica",
+    status: "Playful side project / live demo"
   }
 ];
 
