@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getPortfolioHomeData } from "../lib/portfolio";
 import ProjectMedia from "./project-media";
 import ThemeToggle from "./theme-toggle";
+import CinematicParallax from "./cinematic-parallax";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +18,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="cinematic-hero-wrap">
+      <CinematicParallax>
         <div className="cinematic-scene" aria-hidden="true">
           <div className="cinematic-sky-glow" />
           <div className="cinematic-orbit" />
@@ -52,7 +53,7 @@ export default async function Home() {
           </div>
         </section>
         <a href="#work" className="cinematic-scroll" aria-label="Scroll to selected work"><span>SCROLL TO WORK</span><i /></a>
-      </div>
+      </CinematicParallax>
 
       <section id="work" className="section shell">
         <div className="section-head"><div><p className="eyebrow">SELECTED WORK</p><h2>Systems built around real operational problems.</h2></div><p className="muted note">The first three projects focus directly on Moodle and LMS operations. Public products use their real live sites as previews; internal projects are labeled instead of using invented screenshots.</p></div>
