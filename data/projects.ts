@@ -121,6 +121,21 @@ export const projects: Project[] = [
     liveUrl: "https://prankjessica.vercel.app/",
     repoUrl: "https://github.com/eltonmalumbot/prankjessica",
     status: "Playful side project / live demo"
+  },
+  {
+    slug: "moodle-teacher-training",
+    index: "07",
+    title: "Moodle & Teacher Digital Training",
+    eyebrow: "Educator Training · Moodle · Educational Technology",
+    subtitle: "Hands-on Moodle and digital technology training for teachers",
+    summary: "I facilitate practical training for teachers, with Moodle as a core topic alongside other educational technology and digital-workflow sessions. The focus is not only explaining features, but helping educators become comfortable applying technology in their day-to-day work.",
+    problem: "Teachers can have very different levels of digital confidence. Effective training needs to translate technical tools into clear, practical steps that are relevant to classroom and school workflows.",
+    solution: "I deliver guided, hands-on sessions using demonstrations, step-by-step practice, discussion, troubleshooting, and direct assistance. Moodle is one of the main training areas, while other sessions can cover broader digital tools and technology used by educators.",
+    role: ["Moodle trainer", "Teacher technology facilitator", "Workshop facilitation", "Training material preparation", "Hands-on mentoring and troubleshooting"],
+    features: ["Hands-on Moodle training for teachers", "Guided demonstrations and practical exercises", "Teacher-focused educational technology sessions", "Live Q&A and troubleshooting", "Step-by-step learning support", "Training materials and session documentation", "Adaptation to different levels of digital readiness", "Photo documentation gallery for training activities"],
+    stack: ["Moodle", "Educational Technology", "Teacher Training", "Workshop Facilitation", "Digital Literacy"],
+    outcome: "This work demonstrates my ability to bridge technical LMS knowledge and real educator needs—communicating clearly, facilitating hands-on learning, and supporting teachers as they adopt digital tools.",
+    status: "Educator training & facilitation"
   }
 ];
 
