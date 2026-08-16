@@ -81,6 +81,7 @@ function mapProject(row: any): Project {
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
+    coverImageUrl: row.resolved_cover_image_url || row.cover_image_url || undefined,
     status: row.status,
   };
 }
@@ -92,7 +93,22 @@ export async function getPortfolioHomeData() {
   try {
     const [profileRows, projectRows, certificateRows] = await Promise.all([
       sql`SELECT * FROM portfolio_profile ORDER BY updated_at DESC LIMIT 1`,
-      sql`SELECT * FROM portfolio_projects WHERE published = true ORDER BY sort_order ASC`,
+      sql`
+        SELECT p.*,
+          COALESCE(
+            p.cover_image_url,
+            (
+              SELECT i.image_url
+              FROM portfolio_project_images i
+              WHERE i.project_id = p.id
+              ORDER BY i.sort_order ASC, i.created_at ASC
+              LIMIT 1
+            )
+          ) AS resolved_cover_image_url
+        FROM portfolio_projects p
+        WHERE p.published = true
+        ORDER BY p.sort_order ASC
+      `,
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
     ]);
 
@@ -135,7 +151,22 @@ export async function getPortfolioProject(slug: string) {
   const sql = db();
   if (!sql) return fallbackProjects.find((p) => p.slug === slug);
   try {
-    const rows = await sql`SELECT * FROM portfolio_projects WHERE slug = ${slug} AND published = true LIMIT 1`;
+    const rows = await sql`
+      SELECT p.*,
+        COALESCE(
+          p.cover_image_url,
+          (
+            SELECT i.image_url
+            FROM portfolio_project_images i
+            WHERE i.project_id = p.id
+            ORDER BY i.sort_order ASC, i.created_at ASC
+            LIMIT 1
+          )
+        ) AS resolved_cover_image_url
+      FROM portfolio_projects p
+      WHERE p.slug = ${slug} AND p.published = true
+      LIMIT 1
+    `;
     const row = (rows as any[])[0];
     return row ? mapProject(row) : fallbackProjects.find((p) => p.slug === slug);
   } catch (error) {
