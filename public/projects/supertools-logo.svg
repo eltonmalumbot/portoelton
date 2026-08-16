@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="t d"><title id="t">Moodle SuperTools</title><desc id="d">Moodle SuperTools project logo</desc><rect width="1200" height="400" rx="34" fill="#ffffff"/><rect x="420" y="34" width="360" height="70" rx="35" fill="#0d1b2a"/><text x="600" y="80" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="800" letter-spacing="7" fill="#f7b500">SUPER TOOLS</text><g transform="translate(96 112)"><path d="M42 115c54-18 108-10 159 17v118c-52-29-106-35-159-14z" fill="#0b3b78"/><path d="M201 132c51-27 105-35 159-17v121c-53-21-107-15-159 14z" fill="#11a9df"/><path d="M61 132c47-7 90 2 132 24v68c-42-22-85-30-132-22z" fill="#fff"/><path d="M209 156c42-22 85-31 132-24v70c-47-8-90 0-132 22z" fill="#fff"/><path d="M104 78l97-52 97 52-97 52z" fill="#0b3b78"/><path d="M143 99v35c37-15 79-15 116 0V99" fill="#0b3b78"/><circle cx="201" cy="171" r="57" fill="#13afe4" stroke="#ffffff" stroke-width="12"/><path d="M201 128l12 18 22-3 3 22 19 12-12 18 5 22-22 5-12 19-18-12-22 5-5-22-19-12 12-18-5-22 22-5 12-19z" fill="#0d1b2a" opacity=".14"/><path d="M215 139l-37 47h25l-12 39 42-54h-26z" fill="#ff9c00"/></g><text x="515" y="223" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" fill="#0b3b78">Moodle</text><text x="760" y="223" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="800" fill="#13afe4">SuperTools</text><text x="519" y="272" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#6b7280">Administration · Automation · Moodle Web Services</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="t d">
+  <title id="t">Moodle SuperTools</title>
+  <desc id="d">Moodle SuperTools project logo</desc>
+  <rect width="1200" height="400" rx="34" fill="#ffffff"/>
+
+  <g transform="translate(70 78)">
+    <path d="M36 112c50-17 99-9 146 15v108c-48-26-97-32-146-13z" fill="#0b3b78"/>
+    <path d="M182 127c47-24 96-32 146-15v110c-49-19-98-13-146 13z" fill="#11a9df"/>
+    <path d="M53 128c42-6 82 2 121 21v62c-39-20-79-27-121-20z" fill="#fff"/>
+    <path d="M190 149c39-19 79-27 121-21v63c-42-7-82 0-121 20z" fill="#fff"/>
+    <path d="M92 76l90-49 90 49-90 48z" fill="#0b3b78"/>
+    <path d="M129 96v32c34-14 72-14 106 0V96" fill="#0b3b78"/>
+    <circle cx="182" cy="163" r="52" fill="#13afe4" stroke="#ffffff" stroke-width="11"/>
+    <path d="M195 134l-34 43h23l-11 36 39-49h-24z" fill="#ff9c00"/>
+  </g>
+
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="435" y="60" width="300" height="52" rx="26" fill="#0d1b2a"/>
+    <text x="585" y="94" text-anchor="middle" font-size="22" font-weight="800" letter-spacing="5" fill="#f7b500">SUPER TOOLS</text>
+
+    <text x="435" y="196" font-size="60" font-weight="800" fill="#0b3b78">Moodle</text>
+    <text x="663" y="196" font-size="60" font-weight="800" fill="#13afe4">SuperTools</text>
+
+    <text x="439" y="253" font-size="23" fill="#6b7280">Administration · Automation · Moodle Web Services</text>
+    <text x="439" y="296" font-size="19" fill="#94a3b8">Centralized LMS operations and administration workflows</text>
+  </g>
+</svg>
