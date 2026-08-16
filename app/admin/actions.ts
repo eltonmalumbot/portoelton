@@ -85,6 +85,8 @@ export async function saveProfileAction(formData: FormData) {
     photo_url: photoUrl,
     linkedin_url: text(formData, "linkedin_url"),
     github_url: text(formData, "github_url"),
+    email: text(formData, "email"),
+    phone: text(formData, "phone"),
     location: text(formData, "location"),
     job_title: text(formData, "job_title"),
     organization_name: text(formData, "organization_name"),
