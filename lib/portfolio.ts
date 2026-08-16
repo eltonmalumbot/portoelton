@@ -8,6 +8,8 @@ export type PortfolioProfile = {
   photoUrl?: string;
   linkedinUrl?: string;
   githubUrl?: string;
+  email?: string;
+  phone?: string;
   location?: string;
   jobTitle?: string;
   organizationName?: string;
@@ -120,6 +122,8 @@ export async function getPortfolioHomeData() {
       photoUrl: p.photo_url || fallbackProfile.photoUrl,
       linkedinUrl: p.linkedin_url || undefined,
       githubUrl: p.github_url || undefined,
+      email: p.email || undefined,
+      phone: p.phone || undefined,
       location: p.location || undefined,
       jobTitle: p.job_title || undefined,
       organizationName: p.organization_name || undefined,
