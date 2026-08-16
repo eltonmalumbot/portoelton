@@ -13,6 +13,7 @@ const skills = [
 
 export default async function Home() {
   const { profile, projects, certificates } = await getPortfolioHomeData();
+  const phoneHref = profile.phone ? `tel:${profile.phone.replace(/[^+\d]/g, "")}` : undefined;
 
   return (
     <main>
@@ -64,7 +65,7 @@ export default async function Home() {
 
       <section id="certificates" className="section cert-section"><div className="shell"><div className="section-head"><div><p className="eyebrow">CERTIFICATES</p><h2>Professional learning and certifications.</h2></div><p className="muted note">Selected credentials that support my technical, data, LMS, and systems background.</p></div><div className="cert-grid">{certificates.map((cert,i)=><article className="cert-card" key={`${cert.title}-${i}`}>{cert.imageUrl && <a className="cert-image-link" href={cert.imageUrl} target="_blank" rel="noreferrer" aria-label={`Open ${cert.title} certificate image`}><img className="cert-image" src={cert.imageUrl} alt={`${cert.title} certificate`} /></a>}<div className="cert-body"><span className="cert-badge">CERTIFICATE</span><h3>{cert.title}</h3><p className="cert-meta">{cert.issuer}{cert.year ? ` · ${cert.year}` : ""}</p>{cert.description && <p className="muted copy">{cert.description}</p>}</div><div className="cert-actions">{cert.credentialUrl ? <a className="link" href={cert.credentialUrl} target="_blank" rel="noreferrer">View credential ↗</a> : cert.imageUrl ? <a className="link" href={cert.imageUrl} target="_blank" rel="noreferrer">View certificate ↗</a> : <span className="muted">Credential details pending</span>}</div></article>)}</div></div></section>
 
-      <section id="contact" className="contact"><div className="shell"><p className="eyebrow pale">LET’S CONNECT</p><h2>Interested in LMS, EdTech, or systems that simplify operations?</h2><p>See my professional background on LinkedIn or browse my public work on GitHub.</p><div className="actions"><a className="btn light" href={profile.linkedinUrl ?? "https://www.linkedin.com/in/eltonmalumbot/"} target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="btn outline" href={profile.githubUrl ?? "https://github.com/eltonmalumbot"} target="_blank" rel="noreferrer">GitHub ↗</a></div></div></section>
+      <section id="contact" className="contact"><div className="shell"><p className="eyebrow pale">LET’S CONNECT</p><h2>Interested in LMS, EdTech, or systems that simplify operations?</h2><p>Connect with me on LinkedIn, or reach me directly by email or phone.</p><div className="actions"><a className="btn light" href={profile.linkedinUrl ?? "https://www.linkedin.com/in/eltonmalumbot/"} target="_blank" rel="noreferrer">LinkedIn ↗</a>{profile.email && <a className="btn outline" href={`mailto:${profile.email}`}>Email ↗</a>}{profile.phone && phoneHref && <a className="btn outline" href={phoneHref}>Call {profile.phone}</a>}</div></div></section>
       <footer className="footer shell"><span>© 2026 {profile.name}</span><span>Built with Next.js · Neon Postgres · Vercel</span></footer>
     </main>
   );
