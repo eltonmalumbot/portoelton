@@ -38,8 +38,8 @@ export async function updateProfile(input: Record<string, string>) {
   if (!rows[0]) {
     await db`
       INSERT INTO portfolio_profile
-      (name, headline, bio, photo_url, linkedin_url, github_url, location, job_title, organization_name, education_name)
-      VALUES (${input.name}, ${input.headline}, ${input.bio}, ${input.photo_url || null}, ${input.linkedin_url || null}, ${input.github_url || null}, ${input.location || null}, ${input.job_title || null}, ${input.organization_name || null}, ${input.education_name || null})
+      (name, headline, bio, photo_url, linkedin_url, github_url, email, phone, location, job_title, organization_name, education_name)
+      VALUES (${input.name}, ${input.headline}, ${input.bio}, ${input.photo_url || null}, ${input.linkedin_url || null}, ${input.github_url || null}, ${input.email || null}, ${input.phone || null}, ${input.location || null}, ${input.job_title || null}, ${input.organization_name || null}, ${input.education_name || null})
     `;
     return;
   }
@@ -47,6 +47,7 @@ export async function updateProfile(input: Record<string, string>) {
     UPDATE portfolio_profile SET
       name = ${input.name}, headline = ${input.headline}, bio = ${input.bio},
       photo_url = ${input.photo_url || null}, linkedin_url = ${input.linkedin_url || null}, github_url = ${input.github_url || null},
+      email = ${input.email || null}, phone = ${input.phone || null},
       location = ${input.location || null}, job_title = ${input.job_title || null}, organization_name = ${input.organization_name || null},
       education_name = ${input.education_name || null}, updated_at = now()
     WHERE id = ${rows[0].id}
