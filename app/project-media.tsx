@@ -32,12 +32,55 @@ export default function ProjectMedia({ project, featured = false }: { project: P
       <Link
         href={`/work/${project.slug}`}
         className={className}
-        style={{ position: "relative", overflow: "hidden", display: "grid", placeItems: "center", minHeight: featured ? 460 : 230, background: "#fff", borderRadius: featured ? 0 : 18, marginBottom: featured ? 0 : 30, padding: featured ? 44 : 28 }}
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: featured ? 460 : 250,
+          background: "#f8fafc",
+          borderRadius: featured ? 0 : 18,
+          marginBottom: featured ? 0 : 30,
+          padding: featured ? "52px 58px 100px" : "34px 34px 88px",
+          boxSizing: "border-box",
+        }}
       >
-        <img src={logo} alt={`${project.title} logo`} style={{ width: "100%", height: "100%", maxHeight: featured ? 300 : 180, objectFit: "contain", display: "block" }} />
-        <div style={{ position: "absolute", left: 16, right: 16, bottom: 16, padding: "12px 14px", borderRadius: 14, background: "rgba(8,17,29,.88)", color: "#fff", backdropFilter: "blur(8px)", display: "flex", justifyContent: "space-between", gap: 12, alignItems: "center" }}>
+        <img
+          src={logo}
+          alt={`${project.title} logo`}
+          style={{
+            display: "block",
+            width: "auto",
+            height: "auto",
+            maxWidth: featured ? "88%" : "92%",
+            maxHeight: featured ? 270 : 145,
+            objectFit: "contain",
+            objectPosition: "center",
+          }}
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            left: featured ? 22 : 16,
+            right: featured ? 22 : 16,
+            bottom: featured ? 22 : 16,
+            minHeight: 48,
+            padding: "12px 14px",
+            borderRadius: 14,
+            background: "rgba(8,17,29,.88)",
+            color: "#fff",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            justifyContent: "space-between",
+            gap: 12,
+            alignItems: "center",
+            boxSizing: "border-box",
+          }}
+        >
           <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>PROJECT LOGO</span>
-          <strong style={{ fontSize: 12 }}>{project.title}</strong>
+          <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
         </div>
       </Link>
     );
