@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Project } from "../data/projects";
 
-const projectScreenshots: Record<string, string> = {
-  supertools: "/projects/supertools-01.svg",
-  unifair: "/projects/unifair-01.svg",
-  "moodle-service-portal": "/projects/msp-01.svg",
+const projectLogos: Record<string, string> = {
+  supertools: "/projects/supertools-logo.svg",
+  unifair: "/projects/unifair-logo.svg",
+  "moodle-service-portal": "/projects/msp-logo.svg",
 };
 
 const internalMedia: Record<string, { label: string; detail: string }> = {
@@ -26,17 +26,17 @@ export default function ProjectMedia({ project, featured = false }: { project: P
     );
   }
 
-  const screenshot = projectScreenshots[project.slug];
-  if (screenshot) {
+  const logo = projectLogos[project.slug];
+  if (logo) {
     return (
       <Link
         href={`/work/${project.slug}`}
         className={className}
-        style={{ position: "relative", overflow: "hidden", display: "block", minHeight: featured ? 460 : 230, background: "var(--surface)", borderRadius: featured ? 0 : 18, marginBottom: featured ? 0 : 30 }}
+        style={{ position: "relative", overflow: "hidden", display: "grid", placeItems: "center", minHeight: featured ? 460 : 230, background: "#fff", borderRadius: featured ? 0 : 18, marginBottom: featured ? 0 : 30, padding: featured ? 44 : 28 }}
       >
-        <img src={screenshot} alt={`${project.title} interface preview`} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+        <img src={logo} alt={`${project.title} logo`} style={{ width: "100%", height: "100%", maxHeight: featured ? 300 : 180, objectFit: "contain", display: "block" }} />
         <div style={{ position: "absolute", left: 16, right: 16, bottom: 16, padding: "12px 14px", borderRadius: 14, background: "rgba(8,17,29,.88)", color: "#fff", backdropFilter: "blur(8px)", display: "flex", justifyContent: "space-between", gap: 12, alignItems: "center" }}>
-          <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>PROJECT INTERFACE</span>
+          <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>PROJECT LOGO</span>
           <strong style={{ fontSize: 12 }}>{project.title}</strong>
         </div>
       </Link>
