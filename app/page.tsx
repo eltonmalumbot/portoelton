@@ -17,26 +17,42 @@ export default async function Home() {
 
   return (
     <main>
-      <header className="header shell">
-        <Link href="/" className="brand"><span>EM</span> {profile.name}</Link>
-        <div className="header-actions">
-          <nav><a href="#work">Work</a><a href="#about">About</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></nav>
-          <ThemeToggle />
+      <div className="cinematic-hero-wrap">
+        <div className="cinematic-scene" aria-hidden="true">
+          <div className="cinematic-sky-glow" />
+          <div className="cinematic-orbit" />
+          <div className="cinematic-stars" />
+          <div className="cinematic-cloud c1" />
+          <div className="cinematic-cloud c2" />
+          <div className="cinematic-cloud c3" />
+          <div className="cinematic-mountain back" />
+          <div className="cinematic-mountain" />
+          <div className="cinematic-grid" />
+          <div className="cinematic-noise" />
         </div>
-      </header>
 
-      <section className="hero shell">
-        <div>
-          <p className="eyebrow">LMS · EDUCATIONAL TECHNOLOGY · SYSTEMS</p>
-          <h1>I build systems that make learning technology easier to operate.</h1>
-          <p className="lead">I’m {profile.name}, a {profile.jobTitle ?? "technology professional"} with hands-on experience designing, administering, and improving Moodle-based workflows, LMS operations, and internal digital tools.</p>
-          <div className="actions"><a className="btn primary" href="#work">Explore my work ↘</a><a className="btn" href={profile.linkedinUrl ?? "https://www.linkedin.com/in/eltonmalumbot/"} target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
-        </div>
-        <div className="hero-side">
-          <div className="photo-card"><img src="/elton-profile.jpg" alt={profile.name} className="profile-photo" /></div>
-          <aside className="hero-card"><p className="muted tiny">CURRENT FOCUS</p><h2>LMS operations with a builder mindset.</h2><p className="muted">I work at the intersection of platform administration, workflow design, automation, troubleshooting, and web development.</p><div className="stats"><div><b>3</b><span>Core LMS projects</span></div><div><b>{projects.length}</b><span>Case studies</span></div><div><b>API</b><span>Moodle Web Services</span></div><div><b>Ops</b><span>Production workflows</span></div></div></aside>
-        </div>
-      </section>
+        <header className="header shell cinematic-header">
+          <Link href="/" className="brand"><span>EM</span> {profile.name}</Link>
+          <div className="header-actions">
+            <nav><a href="#work">Work</a><a href="#about">About</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></nav>
+            <ThemeToggle />
+          </div>
+        </header>
+
+        <section className="hero shell cinematic-hero">
+          <div className="cinematic-copy">
+            <p className="eyebrow">LMS · EDUCATIONAL TECHNOLOGY · SYSTEMS</p>
+            <h1>I build systems that make learning technology easier to operate.</h1>
+            <p className="lead">I’m {profile.name}, a {profile.jobTitle ?? "technology professional"} with hands-on experience designing, administering, and improving Moodle-based workflows, LMS operations, and internal digital tools.</p>
+            <div className="actions"><a className="btn primary" href="#work">Explore my work ↘</a><a className="btn" href={profile.linkedinUrl ?? "https://www.linkedin.com/in/eltonmalumbot/"} target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+          </div>
+          <div className="hero-side">
+            <div className="photo-card"><img src="/elton-profile.jpg" alt={profile.name} className="profile-photo" /></div>
+            <aside className="hero-card"><p className="muted tiny">CURRENT FOCUS</p><h2>LMS operations with a builder mindset.</h2><p className="muted">I work at the intersection of platform administration, workflow design, automation, troubleshooting, and web development.</p><div className="stats"><div><b>3</b><span>Core LMS projects</span></div><div><b>{projects.length}</b><span>Case studies</span></div><div><b>API</b><span>Moodle Web Services</span></div><div><b>Ops</b><span>Production workflows</span></div></div></aside>
+          </div>
+        </section>
+        <a href="#work" className="cinematic-scroll" aria-label="Scroll to selected work"><span>SCROLL TO WORK</span><i /></a>
+      </div>
 
       <section id="work" className="section shell">
         <div className="section-head"><div><p className="eyebrow">SELECTED WORK</p><h2>Systems built around real operational problems.</h2></div><p className="muted note">The first three projects focus directly on Moodle and LMS operations. Public products use their real live sites as previews; internal projects are labeled instead of using invented screenshots.</p></div>
