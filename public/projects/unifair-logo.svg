@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="t d"><title id="t">UniFair</title><desc id="d">UniFair Moodle University Fair project logo</desc><rect width="1200" height="400" rx="34" fill="#fff"/><g transform="translate(90 58)"><path d="M63 105l130-71 130 71" fill="none" stroke="#0b2d5b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M83 116h220" stroke="#0b2d5b" stroke-width="16"/><path d="M101 127v77M150 127v77M238 127v77M287 127v77" stroke="#0b2d5b" stroke-width="16"/><path d="M59 212c47-18 95-14 139 12v79c-45-24-92-28-139-10z" fill="#0b2d5b"/><path d="M198 224c44-26 92-30 139-12v81c-47-18-94-14-139 10z" fill="#13afe4"/><path d="M198 116c-43 0-78 35-78 78 0 58 78 124 78 124s78-66 78-124c0-43-35-78-78-78z" fill="#13afe4"/><circle cx="198" cy="190" r="35" fill="#fff"/><path d="M177 190l15 15 29-32" fill="none" stroke="#ff9300" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M198 19v-28M198 -8h54l-15 16 15 16h-54" fill="#ff9300" stroke="#ff9300" stroke-width="8" stroke-linejoin="round"/></g><text x="490" y="182" font-family="Arial,Helvetica,sans-serif" font-size="88" font-weight="800" fill="#0b2d5b">Uni</text><text x="625" y="182" font-family="Arial,Helvetica,sans-serif" font-size="88" font-weight="800" fill="#13afe4">Fair</text><text x="495" y="244" font-family="Arial,Helvetica,sans-serif" font-size="34" fill="#6b7280">Moodle University Fair</text><text x="495" y="292" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#94a3b8">Session-based selection · Quota enforcement · Student workflow</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="t d">
+  <title id="t">UniFair</title>
+  <desc id="d">UniFair Moodle University Fair project logo</desc>
+  <rect width="1200" height="400" rx="34" fill="#ffffff"/>
+
+  <g transform="translate(78 56)">
+    <path d="M63 105l130-71 130 71" fill="none" stroke="#0b2d5b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M83 116h220" stroke="#0b2d5b" stroke-width="16"/>
+    <path d="M101 127v77M150 127v77M238 127v77M287 127v77" stroke="#0b2d5b" stroke-width="16"/>
+    <path d="M59 212c47-18 95-14 139 12v79c-45-24-92-28-139-10z" fill="#0b2d5b"/>
+    <path d="M198 224c44-26 92-30 139-12v81c-47-18-94-14-139 10z" fill="#13afe4"/>
+    <path d="M198 116c-43 0-78 35-78 78 0 58 78 124 78 124s78-66 78-124c0-43-35-78-78-78z" fill="#13afe4"/>
+    <circle cx="198" cy="190" r="35" fill="#fff"/>
+    <path d="M177 190l15 15 29-32" fill="none" stroke="#ff9300" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M198 19v-28M198 -8h54l-15 16 15 16h-54" fill="#ff9300" stroke="#ff9300" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="472" y="188" font-size="86" font-weight="800" fill="#0b2d5b">Uni</text>
+    <text x="636" y="188" font-size="86" font-weight="800" fill="#13afe4">Fair</text>
+    <text x="476" y="247" font-size="34" fill="#6b7280">Moodle University Fair</text>
+    <text x="476" y="294" font-size="22" fill="#94a3b8">Session-based selection · Quota enforcement · Student workflow</text>
+  </g>
+</svg>
