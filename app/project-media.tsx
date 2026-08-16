@@ -26,6 +26,58 @@ export default function ProjectMedia({ project, featured = false }: { project: P
     );
   }
 
+  if (project.coverImageUrl) {
+    return (
+      <Link
+        href={`/work/${project.slug}`}
+        className={className}
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          display: "block",
+          minHeight: featured ? 460 : 250,
+          borderRadius: featured ? 0 : 18,
+          marginBottom: featured ? 0 : 30,
+          background: "#0d1b2a",
+        }}
+      >
+        <img
+          src={project.coverImageUrl}
+          alt={`${project.title} cover`}
+          style={{
+            display: "block",
+            width: "100%",
+            height: featured ? 460 : 250,
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: featured ? 22 : 16,
+            right: featured ? 22 : 16,
+            bottom: featured ? 22 : 16,
+            minHeight: 48,
+            padding: "12px 14px",
+            borderRadius: 14,
+            background: "rgba(8,17,29,.86)",
+            color: "#fff",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            justifyContent: "space-between",
+            gap: 12,
+            alignItems: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>PROJECT DOCUMENTATION</span>
+          <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
+        </div>
+      </Link>
+    );
+  }
+
   const logo = projectLogos[project.slug];
   if (logo) {
     return (
