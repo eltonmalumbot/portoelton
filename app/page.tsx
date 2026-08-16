@@ -33,7 +33,7 @@ export default async function Home() {
           <div className="actions"><a className="btn primary" href="#work">Explore my work ↘</a><a className="btn" href={profile.linkedinUrl ?? "https://www.linkedin.com/in/eltonmalumbot/"} target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
         </div>
         <div className="hero-side">
-          <div className="photo-card"><img src={profile.photoUrl ?? "/elton-profile.png"} alt={profile.name} className="profile-photo" /></div>
+          <div className="photo-card"><img src="/elton-profile.jpg" alt={profile.name} className="profile-photo" /></div>
           <aside className="hero-card"><p className="muted tiny">CURRENT FOCUS</p><h2>LMS operations with a builder mindset.</h2><p className="muted">I work at the intersection of platform administration, workflow design, automation, troubleshooting, and web development.</p><div className="stats"><div><b>3</b><span>Core LMS projects</span></div><div><b>{projects.length}</b><span>Case studies</span></div><div><b>API</b><span>Moodle Web Services</span></div><div><b>Ops</b><span>Production workflows</span></div></div></aside>
         </div>
       </section>
