@@ -16,6 +16,7 @@ export type Project = {
   repoUrl?: string;
   repoPrivate?: boolean;
   pluginNote?: string;
+  coverImageUrl?: string;
   status: string;
 };
 
