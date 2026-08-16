@@ -3,6 +3,7 @@ import "./globals.css";
 import "./project-images.css";
 import "./cinematic.css";
 import "./cinematic-parallax.css";
+import "./cinematic-light.css";
 
 export const metadata: Metadata = {
   title: "Elton Malumbot — LMS & Educational Technology",
