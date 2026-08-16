@@ -13,8 +13,6 @@ const skills = [
 
 export default async function Home() {
   const { profile, projects, certificates } = await getPortfolioHomeData();
-  const featured = projects.find((p) => p.featured) ?? projects[0];
-  const others = projects.filter((p) => p.slug !== featured.slug);
 
   return (
     <main>
@@ -56,12 +54,8 @@ export default async function Home() {
       </CinematicParallax>
 
       <section id="work" className="section shell">
-        <div className="section-head"><div><p className="eyebrow">SELECTED WORK</p><h2>Systems built around real operational problems.</h2></div><p className="muted note">The first three projects focus directly on Moodle and LMS operations. Public products use their real live sites as previews; internal projects are labeled instead of using invented screenshots.</p></div>
-        <article className="featured">
-          <div><p className="tiny muted">{featured.index} / FEATURED</p><h3>{featured.title}</h3><p className="subtitle">{featured.subtitle}</p><p className="muted copy">{featured.summary}</p><div className="tags">{featured.stack.slice(0,5).map((t)=><span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${featured.slug}`}>Read case study ↗</Link>{featured.repoUrl ? <a className="link" href={featured.repoUrl} target="_blank" rel="noreferrer">GitHub{featured.repoPrivate ? " 🔒" : ""} ↗</a> : <span className="muted">Private source</span>}</div></div>
-          <ProjectMedia project={featured} featured />
-        </article>
-        <div className="grid">{others.map((p)=><article className="card" key={p.slug}><ProjectMedia project={p} /><div className="card-meta"><span>{p.index}</span><span>{p.status}</span></div><p className="eyebrow small">{p.eyebrow}</p><h3>{p.title}</h3><p className="subtitle">{p.subtitle}</p><p className="muted copy">{p.summary}</p><div className="tags">{p.stack.slice(0,4).map((t)=><span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${p.slug}`}>Case study ↗</Link>{p.repoUrl && <a className="link" href={p.repoUrl} target="_blank" rel="noreferrer">GitHub{p.repoPrivate ? " 🔒" : ""} ↗</a>}{p.liveUrl && <a className="muted" href={p.liveUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></article>)}</div>
+        <div className="section-head"><div><p className="eyebrow">SELECTED WORK</p><h2>Systems built around real operational problems.</h2></div><p className="muted note">Moodle and LMS operations sit at the center of my work, supported by automation, internal systems, and practical web products.</p></div>
+        <div className="grid">{projects.map((p)=><article className="card" key={p.slug}><ProjectMedia project={p} /><div className="card-meta"><span>{p.index}</span><span>{p.featured ? `Featured · ${p.status}` : p.status}</span></div><p className="eyebrow small">{p.eyebrow}</p><h3>{p.title}</h3><p className="subtitle">{p.subtitle}</p><p className="muted copy">{p.summary}</p><div className="tags">{p.stack.slice(0,4).map((t)=><span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${p.slug}`}>Case study ↗</Link>{p.repoUrl && <a className="link" href={p.repoUrl} target="_blank" rel="noreferrer">GitHub{p.repoPrivate ? " 🔒" : ""} ↗</a>}{p.liveUrl && <a className="muted" href={p.liveUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></article>)}</div>
       </section>
 
       <section className="dark"><div className="section shell two"><div><p className="eyebrow pale">WHAT I BRING</p><h2>Not only administration. Not only development.</h2><p>I understand how people use an LMS, then translate that into safer workflows, automation, tools, and technical improvements.</p></div><div className="skills">{skills.map((s,i)=><div key={s}><span>{String(i+1).padStart(2,"0")}</span><b>{s}</b></div>)}</div></div></section>
