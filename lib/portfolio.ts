@@ -27,8 +27,8 @@ export type Certificate = {
 
 const fallbackProfile: PortfolioProfile = {
   name: "Elton Malumbot",
-  headline: "LMS & Educational Technology Specialist",
-  bio: "DevOps Engineer with hands-on experience designing, administering, and improving Moodle-based workflows, LMS operations, and internal digital tools.",
+  headline: "DevOps Engineer | AI & Web Engineering | LMS Administrator",
+  bio: "DevOps Engineer with hands-on experience across Moodle LMS operations, full-stack web development, AI-assisted workflows, Vercel deployment, Supabase, Neon PostgreSQL, Docker, Linux, and CI/CD tooling.",
   photoUrl: "/elton-profile.jpg",
   linkedinUrl: "https://www.linkedin.com/in/eltonmalumbot/",
   githubUrl: "https://github.com/eltonmalumbot",
