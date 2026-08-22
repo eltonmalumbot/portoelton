@@ -7,8 +7,8 @@ import "./cinematic-light.css";
 import "./cinematic-mobile.css";
 
 export const metadata: Metadata = {
-  title: "Elton Malumbot — LMS & Educational Technology",
-  description: "Portfolio of Elton Malumbot: LMS operations, Moodle automation, educational technology, internal systems, and full-stack web products.",
+  title: "Elton Malumbot — DevOps, AI & Web Engineering",
+  description: "Portfolio of Elton Malumbot: DevOps engineering, AI-assisted web development, Next.js products, Vercel deployments, Supabase, Neon PostgreSQL, Moodle LMS, and systems automation.",
 };
 
 const themeScript = `(() => {
