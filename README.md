@@ -1,14 +1,21 @@
 # Elton Malumbot — Portfolio
 
-Personal portfolio focused on LMS operations, educational technology, Moodle automation, internal systems, and full-stack web products.
+Personal portfolio showcasing work across DevOps, AI-assisted web engineering, full-stack product development, Moodle/LMS operations, systems automation, and educational technology.
 
-## Stack
+## Core stack
 
-- Next.js 16
-- React 19
-- TypeScript
-- Plain CSS
-- Vercel-ready
+- Next.js 16 / React 19 / TypeScript
+- Vercel deployment
+- Supabase / PostgreSQL
+- Neon PostgreSQL / Neon Auth
+- Docker / Linux
+- Jenkins / GitLab CI/CD
+- Prometheus / Grafana
+- Moodle / Moodle Web Services
+
+## Portfolio focus
+
+The portfolio combines production-oriented LMS and systems work with modern web products. Case studies include Moodle administration and custom plugins, internal operational tools, full-stack applications, cloud databases, and AI-assisted product workflows.
 
 ## Local development
 
@@ -25,4 +32,4 @@ npm run build
 
 ## Deployment
 
-Import this GitHub repository into Vercel. No environment variables or external database are required for the portfolio itself.
+The site is deployed on Vercel and uses Neon PostgreSQL for portfolio content managed by the application backend.
