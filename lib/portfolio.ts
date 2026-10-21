@@ -83,7 +83,8 @@ function mapProject(row: any): Project {
     stack: Array.isArray(row.stack_items) ? row.stack_items : [],
     outcome: row.outcome,
     featured: row.featured,
-    liveUrl: row.live_url || undefined,
+    // Keep the private Elton Office dashboard out of public live previews.
+    liveUrl: row.slug === "elton-office" ? undefined : (row.live_url || undefined),
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
