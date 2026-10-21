@@ -180,6 +180,87 @@ export const projects: Project[] = [
     repoPrivate: true,
     status: "Active development · Private repository"
   },
+  {
+    slug: "commuterline-ai",
+    index: "09",
+    title: "CommuterLine AI — Jabodetabek",
+    eyebrow: "Transport Technology · Schedule Data",
+    subtitle: "Five-line commuter rail timetable and route-planning website",
+    summary: "A browser-based Jabodetabek KRL schedule explorer covering five rail lines, timetable-based arrivals, transfer search, route favorites, and a map simulation built from public timetable and geographic datasets.",
+    problem: "Public train timetables are difficult to filter for specific station pairs, connecting services, and arrival times. Riders need a practical way to explore scheduled journeys without confusing timetables with live train positions.",
+    solution: "I built a responsive React and TypeScript web application that imports the September 10, 2026 KAI Commuter public timetable, searches services throughout the day, suggests connections with bounded transfer rules, stores browser-local favorite routes, and visualizes scheduled train movement on a geographic network map. The interface explicitly distinguishes schedule simulation from operational real-time tracking.",
+    role: [
+      "Product and transport data workflow design",
+      "React/TypeScript implementation",
+      "Timetable PDF parsing and import validation",
+      "Route search and transfer algorithm",
+      "Mapping, browser storage, and deployment design"
+    ],
+    features: [
+      "Five Jabodetabek lines: Cikarang (Blue), Bogor/Nambo (Red), Tangerang (Brown), Rangkasbitung (Green), and Tanjung Priok (Pink)",
+      "Station-pair search with scheduled arrival, duration, service number, and destination information",
+      "Transfer alternatives of up to two changes, with minimum 6-minute connection and bounded waiting time",
+      "Cilejit–Tanah Abang commute presets and browser-local route favorites",
+      "Schedule-driven 2D rail map with approximate movement, not live GPS tracking",
+      "Data import validation: 1,138 identifiable journeys from the September 10, 2026 public timetable",
+      "Clearly labeled schedule source and links to official operational announcements; no automatic delay feed"
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "OpenStreetMap",
+      "Leaflet",
+      "Schedule Parsing",
+      "Browser Storage",
+      "Vercel"
+    ],
+    outcome: "A functional timetable-based route explorer and map simulation that makes published KRL information easier to explore. It does not offer verified live train locations, delay predictions, or guaranteed connections.",
+    coverImageUrl: "/projects/commuterline-ai/cover.svg",
+    repoUrl: "https://github.com/eltonmalumbot/commuterline-ai-jabodetabek",
+    repoPrivate: true,
+    status: "Schedule-data web prototype · Private repository"
+  },
+  {
+    slug: "telaah",
+    index: "10",
+    title: "Telaah — Educational Analysis & Certificates",
+    eyebrow: "Educational Technology · Text Analytics",
+    subtitle: "Indonesian reflection review, duplicate matching, and certificate tools",
+    summary: "A Next.js application for examining Indonesian-language reflection responses, comparing duplicate or similar entries, supporting reviewer-controlled rubric assessments, importing student spreadsheets, exporting reports, and generating certificates.",
+    problem: "Reviewing large sets of learner reflections can require repetitive sorting, checking for repeated responses, applying a consistent rubric, preparing reports, and issuing certificates. Fully automated grades would risk concealing the limits of simple language heuristics.",
+    solution: "I built an analysis workspace that accepts text or spreadsheet responses, highlights explainable pattern findings, compares pairs of answers, supports reviewer edits and confirmation of a four-aspect rubric, and exports filtered PDF/CSV reports. A separate certificate studio produces customizable documents with optional locally verifiable signed QR information.",
+    role: [
+      "Product and analysis workflow design",
+      "Next.js and TypeScript engineering",
+      "Spreadsheet import and export validation",
+      "Human-in-the-loop assessment UX",
+      "PDF, certificates, and verification workflow"
+    ],
+    features: [
+      "Analyze pasted Indonesian text or import XLSX/CSV responses with field mapping",
+      "Exact and normalized duplicate comparison with participant filters, ranking, and side-by-side review",
+      "Four-part reflection quality rubric: relevance, reflection depth, concrete examples, and action plan",
+      "Editable reviewer corrections, confirmation status, and filter-aware top-candidate lists",
+      "Browser-local IndexedDB project persistence and PDF/CSV reporting",
+      "Certificate studio with customizable templates, bulk PDF/ZIP output, and optional ECDSA-signed QR verification",
+      "Clearly disclosed rule-based heuristic suggestions; no AI authorship detection or fully reliable automated grading claim"
+    ],
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Spreadsheet Import",
+      "IndexedDB",
+      "PDF/CSV Export",
+      "ECDSA QR Verification",
+      "Vercel"
+    ],
+    outcome: "An education-focused review and document-generation tool combining inspectable rule-based analysis with human judgment. Candidate scores remain suggestions, not validated automated final grades.",
+    coverImageUrl: "/projects/telaah/cover.svg",
+    repoUrl: "https://github.com/eltonmalumbot/telaah.",
+    status: "Educational analysis application · Public repository"
+  }
 ];
 
 export function getProject(slug: string) {

@@ -8,6 +8,8 @@ import ProjectGalleryMedia from "../../project-gallery-media";
 export const dynamic = "force-dynamic";
 
 const localProjectImages: Record<string, string[]> = {
+  "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
+  telaah: ["/projects/telaah/cover.svg"],
   "elton-office": [
     "/projects/elton-office/cover.avif",
     "/projects/elton-office/task-board.avif",
