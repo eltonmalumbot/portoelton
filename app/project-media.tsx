@@ -8,6 +8,10 @@ const projectLogos: Record<string, string> = {
 };
 
 const internalMedia: Record<string, { label: string; detail: string }> = {
+  "elton-office": {
+    label: "AI AGENT OS · PRIVATE SOURCE",
+    detail: "Owner-controlled virtual office for AI engineering, GitHub workflows, and agent orchestration.",
+  },
   supertools: { label: "INTERNAL LMS TOOL", detail: "Moodle administration and automation platform." },
   unifair: { label: "CUSTOM MOODLE MODULE", detail: "Custom Moodle workflow for university fair scheduling and student selection." },
   "moodle-service-portal": { label: "INTERNAL SERVICE PLATFORM", detail: "Centralized LMS service management workflow." },
