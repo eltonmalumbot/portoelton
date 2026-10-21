@@ -260,6 +260,46 @@ export const projects: Project[] = [
     coverImageUrl: "/projects/telaah/cover.svg",
     repoUrl: "https://github.com/eltonmalumbot/telaah.",
     status: "Educational analysis application · Public repository"
+  },
+  {
+    slug: "evergreen-life",
+    index: "11",
+    title: "Evergreen Life — Isometric Farming Game",
+    eyebrow: "Creative Engineering · Game Development",
+    subtitle: "Playable browser-based farming and life simulation prototype",
+    summary: "An original isometric farming and life-simulation game playable directly in the browser. Grow crops, manage character needs, befriend a local NPC, visit and furnish your home, and save progress locally.",
+    problem: "A cozy farming game needs more than a pretty scene: farming, character movement, daily progression, inventory, and life-simulation systems must work together in a lightweight playable prototype.",
+    solution: "I developed an independent HTML5 Canvas game with an isometric tile world, mouse/touch and keyboard navigation, tilling and watering, three seed and crop types, an in-game shop and coin economy, six personal need meters, one friendship character, a home interior with basic furnishings, and browser-local auto-save. The implementation uses self-contained HTML, CSS, and JavaScript rather than a game engine.",
+    role: [
+      "Game concept and prototype design",
+      "Isometric Canvas rendering and interaction",
+      "JavaScript game-state logic",
+      "Crop, economy, and life-simulation mechanics",
+      "Static web publishing via GitHub and Vercel"
+    ],
+    features: [
+      "Interactive isometric farm and home views rendered on an HTML5 Canvas",
+      "Plant, water, sleep to advance growth, and harvest turnips, carrots, and tomatoes",
+      "Buy seeds, earn coins, and manage a small farming economy",
+      "Track energy, hunger, hygiene, fun, social, and comfort meters",
+      "Speak with one NPC (Mira) to develop a friendship score",
+      "Basic home furniture interaction with keyboard movement and mouse/touch controls",
+      "Automatically save progress in browser localStorage, with a reset option",
+      "One farm, one home, one NPC, and three crop types in playable v0.1; seasons, livestock, and house building are future ideas"
+    ],
+    stack: [
+      "HTML5 Canvas",
+      "JavaScript",
+      "CSS",
+      "LocalStorage",
+      "Isometric 2D",
+      "GitHub",
+      "Vercel"
+    ],
+    outcome: "A playable, original game prototype that demonstrates interactive Canvas graphics and coordinated game-state systems. It is an early v0.1 experiment, not a finished commercial farming game.",
+    liveUrl: "https://elton-farming.vercel.app/",
+    repoUrl: "https://github.com/eltonmalumbot/elton_farming",
+    status: "Playable prototype · v0.1"
   }
 ];
 
