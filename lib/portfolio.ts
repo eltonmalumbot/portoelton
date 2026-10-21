@@ -45,6 +45,8 @@ const fallbackCertificates: Certificate[] = [
 ];
 
 const fallbackProjectImages: Record<string, string[]> = {
+  "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
+  telaah: ["/projects/telaah/cover.svg"],
   "elton-office": [
     "/projects/elton-office/cover.avif",
     "/projects/elton-office/task-board.avif",
@@ -90,7 +92,11 @@ function mapProject(row: any): Project {
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
-    coverImageUrl: row.slug === "elton-office" ? "/projects/elton-office/cover.avif" : (row.resolved_cover_image_url || row.cover_image_url || undefined),
+    coverImageUrl: row.slug === "elton-office"
+      ? "/projects/elton-office/cover.avif"
+      : (row.resolved_cover_image_url || row.cover_image_url ||
+          (row.slug === "commuterline-ai" ? "/projects/commuterline-ai/cover.svg" :
+           row.slug === "telaah" ? "/projects/telaah/cover.svg" : undefined)),
     status: row.status,
   };
 }
@@ -100,7 +106,7 @@ export async function getPortfolioHomeData() {
   if (!sql) return { profile: fallbackProfile, projects: fallbackProjects, certificates: fallbackCertificates };
 
   try {
-    const [profileRows, projectRows, certificateRows, eltonOfficeRows] = await Promise.all([
+    const [profileRows, projectRows, certificateRows, codeBackedProjectRows] = await Promise.all([
       sql`SELECT * FROM portfolio_profile ORDER BY updated_at DESC LIMIT 1`,
       sql`
         SELECT p.*,
@@ -121,7 +127,7 @@ export async function getPortfolioHomeData() {
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
       // If the project is not registered in Neon, show the version in Git.
       // A Neon row (including an unpublished row) takes precedence.
-      sql`SELECT slug FROM portfolio_projects WHERE slug = 'elton-office' LIMIT 1`,
+      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah')`,
     ]);
 
     const p = (profileRows as any[])[0];
@@ -150,13 +156,16 @@ export async function getPortfolioHomeData() {
       description: c.description || undefined,
     }));
 
-    const localEltonOffice = fallbackProjects.find((project) => project.slug === "elton-office");
+    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah"]);
+    const registeredSlugs = new Set((codeBackedProjectRows as any[]).map((row) => String(row.slug)));
     const baseProjects = dbProjects.length
       ? dbProjects
-      : fallbackProjects.filter((project) => project.slug !== "elton-office");
-    const projects = localEltonOffice && !(eltonOfficeRows as any[]).length
-      ? [...baseProjects, { ...localEltonOffice, index: String(baseProjects.length + 1).padStart(2, "0") }]
-      : baseProjects;
+      : fallbackProjects.filter((project) => !codeBackedSlugs.has(project.slug));
+    // A row in Neon takes precedence, including unpublished rows; never re-publish it from fallback data.
+    const additionalProjects = fallbackProjects
+      .filter((project) => codeBackedSlugs.has(project.slug) && !registeredSlugs.has(project.slug))
+      .map((project, index) => ({ ...project, index: String(baseProjects.length + index + 1).padStart(2, "0") }));
+    const projects = [...baseProjects, ...additionalProjects];
 
     return {
       profile,
