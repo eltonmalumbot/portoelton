@@ -51,7 +51,7 @@ const fallbackProjectImages: Record<string, string[]> = {
     "/projects/elton-office/cover.avif",
     "/projects/elton-office/task-board.avif",
     "/projects/elton-office/activity-log.avif",
-    "/projects/elton-office/moodle-install-error.avif",
+    "/projects/elton-office/orion-supervisor.avif",
   ],
   supertools: [
     "/projects/supertools/cover.webp",
@@ -219,7 +219,11 @@ export async function getProjectImages(slug: string) {
       WHERE p.slug = ${slug}
       ORDER BY i.sort_order ASC
     `;
-    const images = (rows as any[]).map((r) => r.image_url).filter(Boolean);
+    const images = (rows as any[])
+      .map((r) => r.image_url)
+      .filter(Boolean)
+      // Suppress the unrelated Moodle upload that was accidentally attached to Elton Office.
+      .filter((url) => slug !== "elton-office" || url !== "/projects/elton-office/moodle-install-error.avif");
     // Keep both source screenshots visible even when Neon holds additional gallery items.
     return slug === "elton-office"
       ? [...fallback, ...images.filter((url) => !fallback.includes(url))]
