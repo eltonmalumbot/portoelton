@@ -93,7 +93,7 @@ export async function getPortfolioHomeData() {
   if (!sql) return { profile: fallbackProfile, projects: fallbackProjects, certificates: fallbackCertificates };
 
   try {
-    const [profileRows, projectRows, certificateRows] = await Promise.all([
+    const [profileRows, projectRows, certificateRows, eltonOfficeRows] = await Promise.all([
       sql`SELECT * FROM portfolio_profile ORDER BY updated_at DESC LIMIT 1`,
       sql`
         SELECT p.*,
@@ -112,6 +112,9 @@ export async function getPortfolioHomeData() {
         ORDER BY p.sort_order ASC
       `,
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
+      // If the project is not registered in Neon, show the version in Git.
+      // A Neon row (including an unpublished row) takes precedence.
+      sql`SELECT slug FROM portfolio_projects WHERE slug = 'elton-office' LIMIT 1`,
     ]);
 
     const p = (profileRows as any[])[0];
@@ -140,9 +143,17 @@ export async function getPortfolioHomeData() {
       description: c.description || undefined,
     }));
 
+    const localEltonOffice = fallbackProjects.find((project) => project.slug === "elton-office");
+    const baseProjects = dbProjects.length
+      ? dbProjects
+      : fallbackProjects.filter((project) => project.slug !== "elton-office");
+    const projects = localEltonOffice && !(eltonOfficeRows as any[]).length
+      ? [...baseProjects, { ...localEltonOffice, index: String(baseProjects.length + 1).padStart(2, "0") }]
+      : baseProjects;
+
     return {
       profile,
-      projects: dbProjects.length ? dbProjects : fallbackProjects,
+      projects,
       certificates: certificates.length ? certificates : fallbackCertificates,
     };
   } catch (error) {
@@ -168,11 +179,12 @@ export async function getPortfolioProject(slug: string) {
           )
         ) AS resolved_cover_image_url
       FROM portfolio_projects p
-      WHERE p.slug = ${slug} AND p.published = true
+      WHERE p.slug = ${slug}
       LIMIT 1
     `;
     const row = (rows as any[])[0];
-    return row ? mapProject(row) : fallbackProjects.find((p) => p.slug === slug);
+    // An unpublished Neon project must never be resurrected by a local fallback.
+    return row ? (row.published ? mapProject(row) : undefined) : fallbackProjects.find((p) => p.slug === slug);
   } catch (error) {
     console.error("Portfolio project fallback:", error);
     return fallbackProjects.find((p) => p.slug === slug);

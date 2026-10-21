@@ -137,7 +137,48 @@ export const projects: Project[] = [
     stack: ["Moodle", "Educational Technology", "Teacher Training", "Workshop Facilitation", "Digital Literacy"],
     outcome: "This work demonstrates my ability to bridge technical LMS knowledge and real educator needs—communicating clearly, facilitating hands-on learning, and supporting teachers as they adopt digital tools.",
     status: "Educator training & facilitation"
-  }
+  },
+  {
+    slug: "elton-office",
+    index: "08",
+    title: "Elton Office — AI Agent OS",
+    eyebrow: "AI Engineering · Agent Orchestration",
+    subtitle: "Private virtual office for AI-assisted GitHub engineering",
+    summary: "A private AI engineering workspace that coordinates planning, code generation, review, and guarded GitHub delivery through a Next.js dashboard, Neon-backed task history, and a trusted local worker.",
+    problem: "Coordinating AI-assisted development across repositories can fragment planning, code review, approval, and delivery history. Automation also needs clear permission boundaries so AI suggestions do not become uncontrolled changes.",
+    solution: "I built an owner-authenticated virtual office that combines GitHub repository workspaces, orchestrated AI roles, the Orion supervisor, CI-gated pull request workflows, and a local worker integrated with Hermes and 9Router. Neon stores task state and audit events, while sensitive actions are protected by explicit policy and owner approval.",
+    role: [
+      "Product concept and architecture",
+      "Agent workflow and orchestration",
+      "Next.js dashboard and local Node.js worker",
+      "GitHub, Neon, and CI/CD integration",
+      "Security gates and approval workflows"
+    ],
+    features: [
+      "Agent workflow for Project Manager, Developer, Reviewer, and DevOps responsibilities",
+      "Private GitHub OAuth dashboard with repository-scoped task and activity views",
+      "Orion Supervisor for approved tasks and sequential multi-repository roadmaps",
+      "AI coding integration via local Hermes and 9Router, with configurable model backends",
+      "GitHub pull request generation with review and repository-specific CI safeguards",
+      "Opt-in automatic merging only when repository policy and CI checks permit it",
+      "Owner-approved Neon project, branch, and database provisioning (S4 opt-in)",
+      "Isometric virtual office view with agent status and task monitoring"
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Neon PostgreSQL",
+      "GitHub OAuth & API",
+      "GitHub Actions",
+      "Hermes & 9Router",
+      "Vercel"
+    ],
+    outcome: "An evolving personal AI engineering control center that makes automated development more observable and auditable while retaining repository-scoped permissions and owner-controlled safeguards. This is an active private project, not a publicly available autonomous development service.",
+    repoUrl: "https://github.com/eltonmalumbot/ai-virtual-office",
+    repoPrivate: true,
+    status: "Active development · Private repository"
+  },
 ];
 
 export function getProject(slug: string) {
