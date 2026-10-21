@@ -45,6 +45,12 @@ const fallbackCertificates: Certificate[] = [
 ];
 
 const fallbackProjectImages: Record<string, string[]> = {
+  "elton-office": [
+    "/projects/elton-office/cover.avif",
+    "/projects/elton-office/task-board.avif",
+    "/projects/elton-office/activity-log.avif",
+    "/projects/elton-office/moodle-install-error.avif",
+  ],
   supertools: [
     "/projects/supertools/cover.webp",
     "/projects/supertools/bulk-users.webp",
@@ -79,11 +85,12 @@ function mapProject(row: any): Project {
     stack: Array.isArray(row.stack_items) ? row.stack_items : [],
     outcome: row.outcome,
     featured: row.featured,
-    liveUrl: row.live_url || undefined,
+    // Keep the private Elton Office dashboard out of public live previews.
+    liveUrl: row.slug === "elton-office" ? undefined : (row.live_url || undefined),
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
-    coverImageUrl: row.resolved_cover_image_url || row.cover_image_url || undefined,
+    coverImageUrl: row.slug === "elton-office" ? "/projects/elton-office/cover.avif" : (row.resolved_cover_image_url || row.cover_image_url || undefined),
     status: row.status,
   };
 }
@@ -204,7 +211,10 @@ export async function getProjectImages(slug: string) {
       ORDER BY i.sort_order ASC
     `;
     const images = (rows as any[]).map((r) => r.image_url).filter(Boolean);
-    return images.length ? images : fallback;
+    // Keep both source screenshots visible even when Neon holds additional gallery items.
+    return slug === "elton-office"
+      ? [...fallback, ...images.filter((url) => !fallback.includes(url))]
+      : (images.length ? images : fallback);
   } catch {
     return fallback;
   }

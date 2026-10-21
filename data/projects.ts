@@ -175,6 +175,7 @@ export const projects: Project[] = [
       "Vercel"
     ],
     outcome: "An evolving personal AI engineering control center that makes automated development more observable and auditable while retaining repository-scoped permissions and owner-controlled safeguards. This is an active private project, not a publicly available autonomous development service.",
+    coverImageUrl: "/projects/elton-office/cover.avif",
     repoUrl: "https://github.com/eltonmalumbot/ai-virtual-office",
     repoPrivate: true,
     status: "Active development · Private repository"
