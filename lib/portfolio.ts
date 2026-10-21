@@ -48,6 +48,8 @@ const fallbackProjectImages: Record<string, string[]> = {
   "elton-office": [
     "/projects/elton-office/cover.avif",
     "/projects/elton-office/task-board.avif",
+    "/projects/elton-office/activity-log.avif",
+    "/projects/elton-office/moodle-install-error.avif",
   ],
   supertools: [
     "/projects/supertools/cover.webp",
@@ -88,7 +90,7 @@ function mapProject(row: any): Project {
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
-    coverImageUrl: row.resolved_cover_image_url || row.cover_image_url || (row.slug === "elton-office" ? "/projects/elton-office/cover.avif" : undefined),
+    coverImageUrl: row.slug === "elton-office" ? "/projects/elton-office/cover.avif" : (row.resolved_cover_image_url || row.cover_image_url || undefined),
     status: row.status,
   };
 }
