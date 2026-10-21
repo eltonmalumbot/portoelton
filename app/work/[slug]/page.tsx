@@ -11,6 +11,8 @@ const localProjectImages: Record<string, string[]> = {
   "elton-office": [
     "/projects/elton-office/cover.avif",
     "/projects/elton-office/task-board.avif",
+    "/projects/elton-office/activity-log.avif",
+    "/projects/elton-office/moodle-install-error.avif",
   ],
   supertools: [
     "/projects/supertools/cover.webp",
