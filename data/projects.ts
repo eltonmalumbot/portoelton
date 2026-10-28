@@ -342,6 +342,49 @@ export const projects: Project[] = [
     liveUrl: "https://penaburcombat.vercel.app/",
     repoUrl: "https://github.com/eltonmalumbot/penaburcombat",
     status: "Playable prototype · independent game · partial HD animation"
+  },
+  {
+    slug: "supermoodle",
+    index: "15",
+    title: "SUPERMOODLE — School Account Approval Portal",
+    eyebrow: "Education Engineering · LMS Workflow & Security",
+    subtitle: "Centralized school account request and Admin IT approval workspace",
+    summary: "A standalone, multi-school account-request and approval workspace for Moodle administration, built around five independently operated school server profiles. The public interface is a synthetic browser-only demo; database, authentication and approval API groundwork exists in the repository but is not operationally enabled or connected to production Moodle.",
+    problem: "Account-creation and data-change requests across several independent school Moodle installations can become fragmented between managers and central IT. A centralized workflow must preserve school boundaries, explicit approval, traceable decisions and safe handling of bulk requests before any production integration.",
+    solution: "I designed a role-aware Indonesian-language demo with School Manager and Central IT Admin views, school directories, request drafts, submissions, rejections with reasons, resubmission, approval and processing status history. Its public UI uses invented records and in-memory state. On main, separate disabled-by-default foundations add isolated PostgreSQL migrations, OIDC/session authorization and transactional approval APIs; broader real-PostgreSQL security QA, guided spreadsheet workflows and live Moodle adapters are still staged in draft or preview branches.",
+    role: [
+      "Workflow/product design for school IT requests",
+      "Role-aware demo UI and responsive navigation",
+      "Request state machine, validation and audit-trail modelling",
+      "PostgreSQL migration and OIDC/approval API groundwork",
+      "Offline testing, staging isolation and security review"
+    ],
+    features: [
+      "School Manager creates and revises fictional student/teacher account requests, then submits them for Admin IT approval",
+      "Admin IT can approve, reject with a reason, or simulate processing and retry of failed requests",
+      "Separate school/manager directories and school-scoped demo views across five independent Moodle server profiles",
+      "Request search and status filters: Draft, Pending, Approved, Rejected, Processing, Completed and Failed",
+      "History records demo actor, timestamps, status changes and decision notes; state resets when the page reloads",
+      "Responsive Indonesian-language interface with keyboard navigation, focus management and demo-only role switching",
+      "Isolated PostgreSQL schema/migration tooling plus disabled-by-default OIDC and transactional approval API foundations on main",
+      "Extended CSV/XLSX workflows and stronger security/Google SSO checks remain on separate preview/draft branches, not all merged into main",
+      "No real user provisioning, production school data, live Moodle connection, active Google SSO or operational backend is claimed"
+    ],
+    stack: [
+      "JavaScript",
+      "HTML/CSS",
+      "Node.js",
+      "Moodle Workflow Design",
+      "PostgreSQL Migrations",
+      "OIDC Foundation",
+      "Vercel Staging",
+      "GitHub CI"
+    ],
+    outcome: "A tested synthetic workflow demo and staged integration foundation for a future centralized school request portal. It is not a live multi-server Moodle admin console: real identity, access control, bulk-account changes and deployment approval still require production-safe integration and operational sign-off.",
+    coverImageUrl: "/projects/supermoodle/workflow.svg",
+    repoUrl: "https://github.com/eltonmalumbot/supertoolsmoodle",
+    repoPrivate: true,
+    status: "Synthetic demo · backend groundwork · production integration pending"
   }
 ];
 

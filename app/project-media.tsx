@@ -76,7 +76,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           }}
         >
           <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>
-            {project.slug === "commuterline-ai" || project.slug === "telaah" ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
+            {project.slug === "commuterline-ai" || project.slug === "telaah" || project.slug === "supermoodle" ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
           </span>
           <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
         </div>
