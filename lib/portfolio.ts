@@ -88,7 +88,7 @@ function mapProject(row: any): Project {
     outcome: row.outcome,
     featured: row.featured,
     // Keep the private Elton Office dashboard out of public live previews.
-    liveUrl: row.slug === "elton-office" ? undefined : (row.live_url || (row.slug === "evergreen-life" ? "https://elton-farming.vercel.app/" : undefined)),
+    liveUrl: row.slug === "elton-office" ? undefined : (row.live_url || (row.slug === "evergreen-life" ? "https://elton-farming.vercel.app/" : row.slug === "penaburcombat" ? "https://penaburcombat.vercel.app/" : undefined)),
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
@@ -127,7 +127,7 @@ export async function getPortfolioHomeData() {
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
       // If the project is not registered in Neon, show the version in Git.
       // A Neon row (including an unpublished row) takes precedence.
-      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life')`,
+      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat')`,
     ]);
 
     const p = (profileRows as any[])[0];
@@ -156,7 +156,7 @@ export async function getPortfolioHomeData() {
       description: c.description || undefined,
     }));
 
-    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life"]);
+    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat"]);
     const registeredSlugs = new Set((codeBackedProjectRows as any[]).map((row) => String(row.slug)));
     const baseProjects = dbProjects.length
       ? dbProjects

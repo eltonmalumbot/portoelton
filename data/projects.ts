@@ -300,6 +300,48 @@ export const projects: Project[] = [
     liveUrl: "https://elton-farming.vercel.app/",
     repoUrl: "https://github.com/eltonmalumbot/elton_farming",
     status: "Playable prototype · v0.1"
+  },
+  {
+    slug: "penaburcombat",
+    index: "14",
+    title: "PENABUR Combat — 16.59: Fight for Friday",
+    eyebrow: "Creative Engineering · 2D Fighting Game",
+    subtitle: "Independent browser fighting game with CPU duels and responsive controls",
+    summary: "An independent, fictional 2D browser fighting game where Ali (Data Strategist) faces Elton (Shadow Developer) in a best-of-three CPU duel. Built with TypeScript, Canvas 2D, and Vite, with keyboard and mobile controls, character sprites, combos, skills, and ultimate moves. Not an official BPK PENABUR product.",
+    problem: "Building a responsive fighting-game prototype requires synchronized combat timing, collision and hit feedback, CPU behavior, round state, cross-device controls, and readable character presentation. Artwork coverage also needs honest fallbacks when a full animation set is not ready.",
+    solution: "I built a modular TypeScript fighting game with separate combat engine, CPU AI, Canvas renderer, input handling, and interface layers. The playable build focuses on Ali versus Elton, combining movement and dashing, jumping and guarding, light-attack combos, heavy attacks, meter-driven special moves, best-of-three rounds, pause, knockout, and rematch. Approved character atlases supply HD idle/walk presentation, while missing combat animations use disclosed temporary whole-sprite poses and visual effects.",
+    role: [
+      "Fighting-game concept, flow, and interface design",
+      "TypeScript combat engine and CPU opponent integration",
+      "Canvas 2D rendering and sprite-atlas presentation",
+      "Keyboard and mobile control workflows",
+      "Automated unit, browser, and atlas regression testing"
+    ],
+    features: [
+      "Playable Ali (Data Strategist) versus Elton (Shadow Developer) CPU duel; five other roster slots are locked",
+      "Best-of-three round logic with KO, draw replay, rematch, pause, and character selection",
+      "Movement, jump, guard, dash, three-hit light combos, heavy attack, and meter-powered skill and ultimate",
+      "Distinct character ultimate names: HEIST PROTOCOL (Ali) and NIGHT DEPLOY (Elton)",
+      "Desktop keyboard controls and dedicated mobile touch movement and attack rows",
+      "Approved Ali/Elton HD PNG atlases for idle and walk, plus temporary static whole-sprite cues for other poses",
+      "Geometric rendering fallback when character assets are missing or fail to load",
+      "TypeScript checks, source/asset tests, and Playwright gameplay and atlas browser regression suites",
+      "Independent fictional side project: not an official BPK PENABUR product and does not use its official logo"
+    ],
+    stack: [
+      "TypeScript",
+      "HTML5 Canvas 2D",
+      "Vite",
+      "CPU AI",
+      "Sprite Atlases",
+      "Playwright",
+      "GitHub Actions",
+      "Vercel"
+    ],
+    outcome: "A deployed and playable independent fighting-game prototype demonstrating game-state architecture, input, rendering, and testable combat interactions. HD animation coverage is partial: combat, hurt, KO, and victory states still need properly authored production frames.",
+    liveUrl: "https://penaburcombat.vercel.app/",
+    repoUrl: "https://github.com/eltonmalumbot/penaburcombat",
+    status: "Playable prototype · independent game · partial HD animation"
   }
 ];
 
