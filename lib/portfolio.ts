@@ -38,11 +38,16 @@ const fallbackProfile: PortfolioProfile = {
   educationName: "STMIK Dharma Putra",
 };
 
-const fallbackCertificates: Certificate[] = [
-  { title: "Certificate Title", issuer: "Issuing organization", year: "Year", description: "Certificate details will be added from the portfolio admin data." },
-  { title: "Certificate Title", issuer: "Issuing organization", year: "Year", description: "This section is ready for LMS, IT, cloud, data, development, and operations credentials." },
-  { title: "Certificate Title", issuer: "Issuing organization", year: "Year", description: "Credential links and certificate images can be stored through the portfolio backend." },
-];
+const ccepCertificate: Certificate = {
+  title: "Certified Cybersecurity Educator Professional (CCEP)",
+  issuer: "Red Team Leaders",
+  year: "2026",
+  credentialUrl: "https://courses.redteamleaders.com/exam-completion/b6daaedf99f75f23",
+  imageUrl: "/certificates/ccep-2026-summary.svg",
+  description: "Issued October 14, 2026. The certificate states completion of all requirements and a passed exam.",
+};
+
+const fallbackCertificates: Certificate[] = [ccepCertificate];
 
 const fallbackProjectImages: Record<string, string[]> = {
   supermoodle: ["/projects/supermoodle/workflow.svg"],
@@ -108,7 +113,7 @@ export async function getPortfolioHomeData() {
   if (!sql) return { profile: fallbackProfile, projects: fallbackProjects, certificates: fallbackCertificates };
 
   try {
-    const [profileRows, projectRows, certificateRows, codeBackedProjectRows] = await Promise.all([
+    const [profileRows, projectRows, certificateRows, codeBackedProjectRows, registeredCredentialRows] = await Promise.all([
       sql`SELECT * FROM portfolio_profile ORDER BY updated_at DESC LIMIT 1`,
       sql`
         SELECT p.*,
@@ -130,6 +135,8 @@ export async function getPortfolioHomeData() {
       // If the project is not registered in Neon, show the version in Git.
       // A Neon row (including an unpublished row) takes precedence.
       sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat', 'supermoodle')`,
+      // A Neon certificate record, even if unpublished, overrides the code-backed credential.
+      sql`SELECT id FROM portfolio_certificates WHERE LOWER(title) = LOWER('Certified Cybersecurity Educator Professional (CCEP)') LIMIT 1`,
     ]);
 
     const p = (profileRows as any[])[0];
@@ -157,6 +164,9 @@ export async function getPortfolioHomeData() {
       imageUrl: c.image_url || undefined,
       description: c.description || undefined,
     }));
+    const credentialAlreadyRegistered = (registeredCredentialRows as any[]).length > 0 ||
+      certificates.some((cert) => String(cert.title).toLowerCase().includes("certified cybersecurity educator professional"));
+    const publishedCertificates = credentialAlreadyRegistered ? certificates : [ccepCertificate, ...certificates];
 
     const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat", "supermoodle"]);
     const registeredSlugs = new Set((codeBackedProjectRows as any[]).map((row) => String(row.slug)));
@@ -172,7 +182,7 @@ export async function getPortfolioHomeData() {
     return {
       profile,
       projects,
-      certificates: certificates.length ? certificates : fallbackCertificates,
+      certificates: publishedCertificates,
     };
   } catch (error) {
     console.error("Portfolio database fallback:", error);

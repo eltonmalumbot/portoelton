@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-label="CCEP certificate information graphic based on the uploaded certificate, not the original issued certificate">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff6f6"/></linearGradient></defs>
+  <rect width="1200" height="780" fill="#f7f8fb"/>
+  <rect x="35" y="35" width="1130" height="710" rx="17" fill="url(#bg)" stroke="#c9001b" stroke-width="7"/>
+  <rect x="66" y="66" width="1068" height="648" rx="5" fill="none" stroke="#f0c5cb" stroke-width="2"/>
+  <text x="600" y="146" text-anchor="middle" fill="#c5001d" font-size="49" font-weight="700" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.5">RED TEAM LEADERS</text>
+  <path d="M390 178H810" stroke="#d8a4ac" stroke-width="3"/>
+  <text x="600" y="238" text-anchor="middle" fill="#414a5b" font-size="21" font-family="Arial, Helvetica, sans-serif" letter-spacing="4">PROFESSIONAL CERTIFICATION</text>
+  <text x="600" y="315" text-anchor="middle" fill="#171c2b" font-size="42" font-weight="700" font-family="Arial, Helvetica, sans-serif">Elton Malumbot</text>
+  <text x="600" y="379" text-anchor="middle" fill="#5c6470" font-size="22" font-family="Arial, Helvetica, sans-serif">Completed requirements and passed the exam</text>
+  <text x="600" y="463" text-anchor="middle" fill="#c5001d" font-size="38" font-weight="700" font-family="Arial, Helvetica, sans-serif">Certified Cybersecurity Educator</text>
+  <text x="600" y="510" text-anchor="middle" fill="#c5001d" font-size="38" font-weight="700" font-family="Arial, Helvetica, sans-serif">Professional (CCEP)</text>
+  <text x="600" y="574" text-anchor="middle" fill="#343c4d" font-size="24" font-family="Arial, Helvetica, sans-serif">Issued 14 October 2026</text>
+  <rect x="280" y="615" width="640" height="47" rx="23" fill="#f9e4e7"/>
+  <text x="600" y="645" text-anchor="middle" fill="#7c3541" font-size="19" font-family="Arial, Helvetica, sans-serif">Certificate details transcribed from uploaded PDF</text>
+  <text x="600" y="694" text-anchor="middle" fill="#6b7280" font-size="16" font-family="Arial, Helvetica, sans-serif">Summary graphic, not the original issued document. Use View credential to check with issuer.</text>
+</svg>
