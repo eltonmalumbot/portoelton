@@ -42,7 +42,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           minHeight: featured ? 460 : 250,
           borderRadius: featured ? 0 : 18,
           marginBottom: featured ? 0 : 30,
-          background: "#0d1b2a",
+          background: project.slug === "supermoodle" ? "#071723" : "#0d1b2a",
         }}
       >
         <img
@@ -52,7 +52,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
             display: "block",
             width: "100%",
             height: featured ? 460 : 250,
-            objectFit: "cover",
+            objectFit: project.slug === "supermoodle" ? "contain" : "cover",
             objectPosition: "center",
           }}
         />
