@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./project-images.css";
+import "./project-catalog.css";
 import "./cinematic.css";
 import "./cinematic-parallax.css";
 import "./cinematic-light.css";
