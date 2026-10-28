@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getPortfolioHomeData } from "../lib/portfolio";
-import ProjectMedia from "./project-media";
+import ProjectCatalog from "./project-catalog";
 import ThemeToggle from "./theme-toggle";
 import CinematicParallax from "./cinematic-parallax";
 
@@ -57,7 +57,7 @@ export default async function Home() {
 
       <section id="work" className="section shell">
         <div className="section-head"><div><p className="eyebrow">SELECTED WORK</p><h2>Products and systems built around real operational problems.</h2></div><p className="muted note">My work spans DevOps and platform operations, full-stack products, AI-assisted workflows, Moodle/LMS systems, and practical automation.</p></div>
-        <div className="grid">{projects.map((p)=><article className="card" key={p.slug}><ProjectMedia project={p} /><div className="card-meta"><span>{p.index}</span><span>{p.featured ? `Featured · ${p.status}` : p.status}</span></div><p className="eyebrow small">{p.eyebrow}</p><h3>{p.title}</h3><p className="subtitle">{p.subtitle}</p><p className="muted copy">{p.summary}</p><div className="tags">{p.stack.slice(0,4).map((t)=><span key={t}>{t}</span>)}</div><div className="card-actions"><Link className="link" href={`/work/${p.slug}`}>Case study ↗</Link>{p.repoUrl && <a className="link" href={p.repoUrl} target="_blank" rel="noreferrer">GitHub{p.repoPrivate ? " 🔒" : ""} ↗</a>}{p.liveUrl && <a className="muted" href={p.liveUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></article>)}</div>
+        <ProjectCatalog projects={projects} />
       </section>
 
       <section className="dark"><div className="section shell two"><div><p className="eyebrow pale">WHAT I BRING</p><h2>Operations, development, and product thinking in one profile.</h2><p>I work across infrastructure, deployment, databases, web applications, AI-assisted workflows, and LMS operations—then connect those skills to real user and organizational needs.</p></div><div className="skills">{skills.map((s,i)=><div key={s}><span>{String(i+1).padStart(2,"0")}</span><b>{s}</b></div>)}</div></div></section>
