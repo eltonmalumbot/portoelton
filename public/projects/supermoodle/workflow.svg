@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="SUPERMOODLE conceptual workflow diagram derived from repository request states; not a UI screenshot">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#122e43"/><stop offset="1" stop-color="#081722"/></linearGradient></defs>
+  <rect width="1200" height="720" fill="#071723"/>
+  <rect x="40" y="38" width="1120" height="645" rx="28" fill="url(#bg)" stroke="#4f7080" stroke-width="2"/>
+  <text x="90" y="112" font-family="Arial, sans-serif" font-size="59" fill="#fff9e6" font-weight="700">SUPERMOODLE</text>
+  <text x="94" y="160" font-family="Arial, sans-serif" font-size="25" fill="#9ac4cb">School account request + Admin IT approval</text>
+  <text x="1106" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="14" letter-spacing="2" fill="#d5b26b">SYNTHETIC WORKFLOW</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="92" y="252" width="292" height="156" rx="22" fill="#1d4558" stroke="#75afb0" stroke-width="2"/>
+    <text x="238" y="303" font-size="17" letter-spacing="2" fill="#91d5cf">01 / MANAGER</text>
+    <text x="238" y="349" font-size="31" font-weight="700" fill="#f8fafb">Draft + Submit</text>
+    <rect x="455" y="252" width="292" height="156" rx="22" fill="#244c5f" stroke="#75afb0" stroke-width="2"/>
+    <text x="601" y="303" font-size="17" letter-spacing="2" fill="#91d5cf">02 / CENTRAL IT</text>
+    <text x="601" y="349" font-size="31" font-weight="700" fill="#f8fafb">Approve / Reject</text>
+    <rect x="820" y="252" width="292" height="156" rx="22" fill="#4f3b35" stroke="#d5af83" stroke-width="2"/>
+    <text x="966" y="303" font-size="17" letter-spacing="2" fill="#f5c99a">03 / DEMO</text>
+    <text x="966" y="349" font-size="30" font-weight="700" fill="#fff8f2">Process + Audit</text>
+    <g stroke="#b5d5d3" stroke-width="5" fill="none" stroke-linecap="round"><path d="M384 329H447"/><path d="M747 329H812"/></g>
+    <g fill="#b5d5d3"><path d="M437 319l15 10-15 10"/><path d="M801 319l15 10-15 10"/></g>
+  </g>
+  <text x="94" y="489" font-family="Arial, sans-serif" font-size="19" fill="#c8dbdf">Five Moodle server profiles • role-scoped sample schools • fictional accounts</text>
+  <text x="94" y="534" font-family="Arial, sans-serif" font-size="19" fill="#d6c59c">Prototype UI only • not connected to real Moodle or production data</text>
+  <path d="M94 585H1105" stroke="#4f7080" stroke-width="2"/>
+  <text x="94" y="632" font-family="Arial, sans-serif" font-size="15" fill="#a3c0ca">SOURCE-BASED WORKFLOW DIAGRAM — NOT AN APP SCREENSHOT</text>
+  <text x="1103" y="632" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#a3c0ca">backend foundations staged / disabled by default</text>
+</svg>

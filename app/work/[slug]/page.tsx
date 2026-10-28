@@ -8,6 +8,7 @@ import ProjectGalleryMedia from "../../project-gallery-media";
 export const dynamic = "force-dynamic";
 
 const localProjectImages: Record<string, string[]> = {
+  supermoodle: ["/projects/supermoodle/workflow.svg"],
   "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
   telaah: ["/projects/telaah/cover.svg"],
   "elton-office": [
@@ -48,7 +49,7 @@ export default async function ProjectPage({params}:{params:Promise<{slug:string}
       <div className="header-actions"><Link href="/#work" className="muted">← All projects</Link><ThemeToggle /></div>
     </header>
 
-    <section className="case-hero shell"><div className="card-meta"><span>{project.index}</span><span>{project.status}</span></div><p className="eyebrow">{project.eyebrow}</p><h1>{project.title}</h1><p className="case-sub">{project.subtitle}</p><p className="case-summary">{project.summary}</p><div className="actions">{project.liveUrl&&<a className="btn primary" href={project.liveUrl} target="_blank" rel="noreferrer">Open live demo ↗</a>}{project.repoUrl&&<a className="btn" href={project.repoUrl} target="_blank" rel="noreferrer">View GitHub{project.repoPrivate?" 🔒":""} ↗</a>}{project.featured&&!project.repoUrl&&<span className="btn">Private source</span>}</div></section>
+    <section className="case-hero shell"><div className="card-meta"><span>{project.index}</span><span>{project.status}</span></div><p className="eyebrow">{project.eyebrow}</p><h1>{project.title}</h1><p className="case-sub">{project.subtitle}</p><p className="case-summary">{project.summary}</p><div className="actions">{project.liveUrl&&<a className="btn primary" href={project.liveUrl} target="_blank" rel="noreferrer">Open live demo ↗</a>}{project.repoUrl&&<a className="btn" href={project.repoUrl} target="_blank" rel="noreferrer">View GitHub{project.repoPrivate?" 🔒":""} ↗</a>}{slug==="supermoodle"&&<a className="btn" href="https://supertoolsmoodle.vercel.app/" target="_blank" rel="noopener noreferrer">Open older demo snapshot ↗</a>}{project.featured&&!project.repoUrl&&<span className="btn">Private source</span>}</div></section>
 
     {project.liveUrl ? (slug === "evergreen-life" ? (<section className="shell project-live-detail">
       <div className="evergreen-game-frame">

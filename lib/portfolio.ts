@@ -45,6 +45,7 @@ const fallbackCertificates: Certificate[] = [
 ];
 
 const fallbackProjectImages: Record<string, string[]> = {
+  supermoodle: ["/projects/supermoodle/workflow.svg"],
   "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
   telaah: ["/projects/telaah/cover.svg"],
   "elton-office": [
@@ -96,7 +97,8 @@ function mapProject(row: any): Project {
       ? "/projects/elton-office/cover.avif"
       : (row.resolved_cover_image_url || row.cover_image_url ||
           (row.slug === "commuterline-ai" ? "/projects/commuterline-ai/cover.svg" :
-           row.slug === "telaah" ? "/projects/telaah/cover.svg" : undefined)),
+           row.slug === "telaah" ? "/projects/telaah/cover.svg" :
+           row.slug === "supermoodle" ? "/projects/supermoodle/workflow.svg" : undefined)),
     status: row.status,
   };
 }
@@ -127,7 +129,7 @@ export async function getPortfolioHomeData() {
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
       // If the project is not registered in Neon, show the version in Git.
       // A Neon row (including an unpublished row) takes precedence.
-      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat')`,
+      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat', 'supermoodle')`,
     ]);
 
     const p = (profileRows as any[])[0];
@@ -156,7 +158,7 @@ export async function getPortfolioHomeData() {
       description: c.description || undefined,
     }));
 
-    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat"]);
+    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat", "supermoodle"]);
     const registeredSlugs = new Set((codeBackedProjectRows as any[]).map((row) => String(row.slug)));
     const baseProjects = dbProjects.length
       ? dbProjects
