@@ -42,7 +42,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           minHeight: featured ? 460 : 250,
           borderRadius: featured ? 0 : 18,
           marginBottom: featured ? 0 : 30,
-          background: project.slug === "supermoodle" ? "#071723" : "#0d1b2a",
+          background: project.slug === "supermoodle" || project.slug === "school-user-manager" ? "#071723" : "#0d1b2a",
         }}
       >
         <img
@@ -52,7 +52,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
             display: "block",
             width: "100%",
             height: featured ? 460 : 250,
-            objectFit: project.slug === "supermoodle" ? "contain" : "cover",
+            objectFit: project.slug === "supermoodle" || project.slug === "school-user-manager" ? "contain" : "cover",
             objectPosition: "center",
           }}
         />
@@ -76,7 +76,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           }}
         >
           <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>
-            {project.slug === "commuterline-ai" || project.slug === "telaah" || project.slug === "supermoodle" ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
+            {project.slug === "commuterline-ai" || project.slug === "telaah" || project.slug === "supermoodle" || project.slug === "school-user-manager" ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
           </span>
           <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
         </div>

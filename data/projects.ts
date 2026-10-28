@@ -385,6 +385,49 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/eltonmalumbot/supertoolsmoodle",
     repoPrivate: true,
     status: "Synthetic demo · backend groundwork · production integration pending"
+  },
+  {
+    slug: "school-user-manager",
+    index: "16",
+    title: "PENABUR School User Manager — Moodle Plugin",
+    eyebrow: "Moodle Engineering · Role-Based Access Control",
+    subtitle: "School mapping, manager authorization, and existing-user memberships",
+    summary: "An alpha-stage Moodle local plugin (local_schoolusers v0.3.0) for administering school/category mappings, assigning school managers, and classifying existing students and teachers per school. Each Moodle installation remains independent; this plugin does not create accounts or synchronize servers.",
+    problem: "Schools sharing one Moodle installation need reliable boundaries for category mapping, manager access, and member counts without accidentally granting global account privileges or exposing other schools' identities.",
+    solution: "I developed a Moodle-native PHP plugin with admin-only school and membership configuration, disjoint course-category mapping validation, explicit manager assignments and revocation, read-only scoped school dashboards, XMLDB schema upgrades, and Moodle Privacy API integrations. Access requires both an active manager assignment and the category-context view capability; administrator writes use session-key checks and independent authorization. Validation covered six official Moodle/PHP combinations in disposable environments, not production hosts.",
+    role: [
+      "PHP and Moodle local plugin design",
+      "School/course-category mapping and access controls",
+      "Admin-only existing-user membership workflows",
+      "Read-only manager dashboard and privacy support",
+      "XMLDB schema upgrades, regression tests and compatibility documentation"
+    ],
+    features: [
+      "Register, edit, activate, or deactivate school records mapped to existing Moodle course-category subtrees",
+      "Reject overlapping category trees and recheck current category ancestry during authorization",
+      "Assign, revoke, or reactivate eligible existing user accounts as school managers",
+      "Require both explicit active school assignment and local/schoolusers:view in the mapped category context",
+      "Manage active/inactive existing student and teacher memberships as site admin; one membership type per school",
+      "Read-only manager view of authorized schools and separate student, teacher and total counts—without individual names",
+      "Three Moodle XMLDB tables and upgrade logic, bilingual English/Indonesian interface, Privacy API discovery/export/approved erasure",
+      "Documented disposable-runtime test matrix: six Moodle/PHP combinations, 564 passing test executions and 1,530 assertions",
+      "Alpha Phase 2B only: no account creation, Excel/CSV import, cohort management, audit log, shared cross-server database or production deployment"
+    ],
+    stack: [
+      "PHP",
+      "Moodle Local Plugin",
+      "Moodle XMLDB",
+      "Moodle Privacy API",
+      "PostgreSQL Test Matrix",
+      "RBAC",
+      "PHPUnit",
+      "GitHub Actions"
+    ],
+    outcome: "A versioned alpha plugin for safely categorizing existing Moodle users by school, with scoped manager summaries and test-backed upgrade/access controls. It is not a central user-provisioning service or a deployed production solution; institutional pilot, browser-level verification and exact environment checks remain pending.",
+    coverImageUrl: "/projects/school-user-manager/workflow.svg",
+    repoUrl: "https://github.com/eltonmalumbot/penabur-moodle-schoolusers",
+    repoPrivate: true,
+    status: "Alpha 0.3.0 · Phase 2B · not deployed"
   }
 ];
 

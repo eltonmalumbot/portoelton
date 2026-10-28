@@ -8,6 +8,7 @@ import ProjectGalleryMedia from "../../project-gallery-media";
 export const dynamic = "force-dynamic";
 
 const localProjectImages: Record<string, string[]> = {
+  "school-user-manager": ["/projects/school-user-manager/workflow.svg"],
   supermoodle: ["/projects/supermoodle/workflow.svg"],
   "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
   telaah: ["/projects/telaah/cover.svg"],

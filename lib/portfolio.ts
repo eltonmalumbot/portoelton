@@ -50,6 +50,7 @@ const ccepCertificate: Certificate = {
 const fallbackCertificates: Certificate[] = [ccepCertificate];
 
 const fallbackProjectImages: Record<string, string[]> = {
+  "school-user-manager": ["/projects/school-user-manager/workflow.svg"],
   supermoodle: ["/projects/supermoodle/workflow.svg"],
   "commuterline-ai": ["/projects/commuterline-ai/cover.svg"],
   telaah: ["/projects/telaah/cover.svg"],
@@ -103,7 +104,8 @@ function mapProject(row: any): Project {
       : (row.resolved_cover_image_url || row.cover_image_url ||
           (row.slug === "commuterline-ai" ? "/projects/commuterline-ai/cover.svg" :
            row.slug === "telaah" ? "/projects/telaah/cover.svg" :
-           row.slug === "supermoodle" ? "/projects/supermoodle/workflow.svg" : undefined)),
+           row.slug === "supermoodle" ? "/projects/supermoodle/workflow.svg" :
+           row.slug === "school-user-manager" ? "/projects/school-user-manager/workflow.svg" : undefined)),
     status: row.status,
   };
 }
@@ -134,7 +136,7 @@ export async function getPortfolioHomeData() {
       sql`SELECT * FROM portfolio_certificates WHERE published = true ORDER BY sort_order ASC`,
       // If the project is not registered in Neon, show the version in Git.
       // A Neon row (including an unpublished row) takes precedence.
-      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat', 'supermoodle')`,
+      sql`SELECT slug FROM portfolio_projects WHERE slug IN ('elton-office', 'commuterline-ai', 'telaah', 'evergreen-life', 'penaburcombat', 'supermoodle', 'school-user-manager')`,
       // A Neon certificate record, even if unpublished, overrides the code-backed credential.
       sql`SELECT id FROM portfolio_certificates WHERE LOWER(title) = LOWER('Certified Cybersecurity Educator Professional (CCEP)') LIMIT 1`,
     ]);
@@ -168,7 +170,7 @@ export async function getPortfolioHomeData() {
       certificates.some((cert) => String(cert.title).toLowerCase().includes("certified cybersecurity educator professional"));
     const publishedCertificates = credentialAlreadyRegistered ? certificates : [ccepCertificate, ...certificates];
 
-    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat", "supermoodle"]);
+    const codeBackedSlugs = new Set(["elton-office", "commuterline-ai", "telaah", "evergreen-life", "penaburcombat", "supermoodle", "school-user-manager"]);
     const registeredSlugs = new Set((codeBackedProjectRows as any[]).map((row) => String(row.slug)));
     const baseProjects = dbProjects.length
       ? dbProjects
