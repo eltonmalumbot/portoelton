@@ -32,6 +32,8 @@ const bySlug: Record<string, readonly SpecificCategory[]> = {
   penaburcombat: ["creative"],
   supermoodle: ["lms", "ops"],
   "school-user-manager": ["lms", "ops"],
+  "project-handoff-hub": ["web", "ops"],
+  peoplelens: ["lms", "web", "ops"],
 };
 
 /** Unknown Neon projects remain visible, under "Other Projects", without invented tags. */
