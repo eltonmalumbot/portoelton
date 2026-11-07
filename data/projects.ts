@@ -428,6 +428,90 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/eltonmalumbot/penabur-moodle-schoolusers",
     repoPrivate: true,
     status: "Alpha 0.3.0 · Phase 2B · not deployed"
+  },
+  {
+    "slug": "project-handoff-hub",
+    "index": "17",
+    "title": "Project Handoff Hub",
+    "eyebrow": "Full-Stack Engineering · Developer Productivity",
+    "subtitle": "Versioned project checkpoints and reliable GitHub-to-AI handoffs",
+    "summary": "A private, owner-only project continuity workspace that turns GitHub metadata, chronological engineering checkpoints, and verified decisions into reproducible Markdown handoffs for later ChatGPT or coding-agent sessions.",
+    "problem": "Long-running projects lose context across sessions. Branches, commit references, test evidence, security constraints, and next steps can become scattered and hard to hand over without misrepresenting what was actually completed.",
+    "solution": "I built a Laravel application with GitHub OAuth owner allowlisting, read-only repository synchronization, append-only checkpoints, deterministic 13-section handoff generation, and validated JSON backups. Manual notes remain distinct from GitHub-fetched data; synchronization never claims to run tests or validate a deployment.",
+    "role": [
+      "Product and workflow architecture",
+      "Laravel, Livewire, and PostgreSQL application development",
+      "GitHub OAuth and read-only API integration",
+      "Authorization, validation, backups, and audit-minded design",
+      "PHPUnit, Playwright, Docker, and release-readiness QA"
+    ],
+    "features": [
+      "Owner-only GitHub OAuth login with numeric account allowlist and database sessions",
+      "Project management with search, status, priority, tags, archiving, deletion, and recovery",
+      "Append-only checkpoints recording branch, commit SHA, PR, implementation, test and deployment evidence, blockers, and next steps",
+      "Deterministic 13-section Markdown handoffs with preview, copy, regenerate, and download",
+      "Read-only GitHub synchronization for repository metadata, recent commits, open PRs, and check statuses",
+      "Versioned JSON backup/import with validation, transactional replacement and deduplication",
+      "Documented local QA: 41 PHPUnit tests passed (1 optional live test skipped), PostgreSQL run, four Playwright browser tests, and Docker production-mode smoke tests",
+      "No public production deployment or completed GitHub OAuth/Neon production integration is claimed"
+    ],
+    "stack": [
+      "Laravel 13",
+      "PHP 8.4",
+      "Livewire 4",
+      "PostgreSQL",
+      "GitHub OAuth/API",
+      "Tailwind CSS 4",
+      "Docker",
+      "PHPUnit / Playwright"
+    ],
+    "outcome": "An extensively tested developer-productivity prototype with repeatable project handoff workflows and documented security boundaries. Local application, PostgreSQL, browser and container checks passed; external Neon connectivity, real production OAuth and public deployment remain unverified.",
+    "featured": true,
+    "coverImageUrl": "/projects/project-handoff-hub/cover.svg",
+    "repoUrl": "https://github.com/eltonmalumbot/project-handoff-hub",
+    "status": "QA-tested prototype · production deployment pending"
+  },
+  {
+    "slug": "peoplelens",
+    "index": "18",
+    "title": "PeopleLens — HR & Moodle Cohort Operations",
+    "eyebrow": "HR Operations · Moodle Integration & Security",
+    "subtitle": "Employee reconciliation, cohort management, and accountable Moodle workflows",
+    "summary": "An HR-focused web interface for Moodle 4.4.3 that reconciles employee email lists with cohorts, reviews activity-completion signals, and provides controlled account and membership workflows with privacy-aware audit logs.",
+    "problem": "HR teams need a reliable way to compare active-employee lists against Moodle cohort membership and follow up on mismatches without treating a missing email as proof of resignation or accidentally changing production accounts.",
+    "solution": "I developed a PHP/JavaScript application for cPanel hosting with protected Moodle Web Services access, email-based matching, completion status reporting, filterable exports, and preview-first cohort/account operations. Sensitive settings require re-authentication; write actions are disabled by default and require additional approval controls.",
+    "role": [
+      "HR workflow and requirements analysis",
+      "PHP, JavaScript, and Moodle REST integration",
+      "Email-based reconciliation and cohort operations",
+      "Access control, token handling, and audit logging",
+      "Synthetic security, browser, and accessibility QA"
+    ],
+    "features": [
+      "Inspect Moodle cohorts and scoped user membership using authorized Web Services",
+      "Reconcile HR existing-employee email lists and mark unknown mismatches for verification rather than automatic offboarding",
+      "Review activity completion with clear caveats: completion is not necessarily a submission or passing result",
+      "Searchable, filterable completion tables with XLSX/CSV export and clear completed/incomplete indicators",
+      "Preview copying cohort membership without deleting source members, plus scoped email-based membership changes",
+      "Preview-first CSV account creation with existing-user detection and separately approved writes",
+      "Re-authentication for sensitive settings, private token storage outside webroot, login throttling, and activity logs",
+      "Synthetic CI and browser QA documented; staging with real cPanel and Moodle 4.4.3 remains a release gate"
+    ],
+    "stack": [
+      "PHP 8.1+",
+      "JavaScript",
+      "Moodle 4.4.3",
+      "Moodle Web Services",
+      "cPanel / Apache",
+      "XLSX / CSV",
+      "Playwright",
+      "Security QA"
+    ],
+    "outcome": "A documented HR and LMS operations application with comprehensive mocked workflows and release-gated security improvements. The November 3 release decision permitted staging validation only; real staging UAT and production approval were not established by that evidence.",
+    "featured": true,
+    "coverImageUrl": "/projects/peoplelens/cover.svg",
+    "repoPrivate": true,
+    "status": "Staging validation candidate · not production approved"
   }
 ];
 
