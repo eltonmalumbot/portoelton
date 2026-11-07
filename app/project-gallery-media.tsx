@@ -9,6 +9,8 @@ type GalleryMediaProps = {
   index: number;
 };
 
+const sourceBasedCovers = new Set(["commuterline-ai", "telaah", "supermoodle", "school-user-manager", "project-handoff-hub", "peoplelens"]);
+
 const projectLogos: Record<string, string> = {
   supertools: "/projects/supertools-logo.svg",
   unifair: "/projects/unifair-logo.svg",
@@ -41,7 +43,7 @@ export default function ProjectGalleryMedia({ src, projectTitle, projectSlug, in
       {!failed ? (
         <img
           src={src}
-          alt={`${projectTitle} ${projectSlug === "commuterline-ai" || projectSlug === "telaah" || projectSlug === "supermoodle" || projectSlug === "school-user-manager" ? "source-based project visual" : "screenshot"} ${index + 1}`}
+          alt={`${projectTitle} ${sourceBasedCovers.has(projectSlug) ? "source-based project visual" : "screenshot"} ${index + 1}`}
           onError={() => setFailed(true)}
         />
       ) : (
@@ -55,7 +57,7 @@ export default function ProjectGalleryMedia({ src, projectTitle, projectSlug, in
         </div>
       )}
       <figcaption>
-        {projectTitle} · {failed ? "Project visual" : (projectSlug === "commuterline-ai" || projectSlug === "telaah" || projectSlug === "supermoodle" || projectSlug === "school-user-manager" ? "Source-based artwork (not a screenshot)" : "Real project media")} {String(index + 1).padStart(2, "0")}
+        {projectTitle} · {failed ? "Project visual" : (sourceBasedCovers.has(projectSlug) ? "Source-based artwork (not a screenshot)" : "Real project media")} {String(index + 1).padStart(2, "0")}
       </figcaption>
     </figure>
   );
