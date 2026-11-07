@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import type { Project } from "../data/projects";
 
@@ -21,6 +23,7 @@ const internalMedia: Record<string, { label: string; detail: string }> = {
 
 export default function ProjectMedia({ project, featured = false }: { project: Project; featured?: boolean }) {
   const className = featured ? "project-visual featured-visual" : "project-thumb";
+  const [coverFailed, setCoverFailed] = useState(false);
 
   if (project.liveUrl) {
     return (
@@ -33,10 +36,11 @@ export default function ProjectMedia({ project, featured = false }: { project: P
   }
 
   if (project.coverImageUrl) {
+    const editorialCover = project.slug === "peoplelens" || project.slug === "project-handoff-hub";
     return (
       <Link
         href={`/work/${project.slug}`}
-        className={className}
+        className={`${className}${editorialCover ? " editorial-cover" : ""}`}
         style={{
           position: "relative",
           overflow: "hidden",
@@ -44,17 +48,18 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           minHeight: featured ? 460 : 250,
           borderRadius: featured ? 0 : 18,
           marginBottom: featured ? 0 : 30,
-          background: project.slug === "supermoodle" || project.slug === "school-user-manager" ? "#071723" : "#0d1b2a",
+          background: project.slug === "peoplelens" ? "#f1f3ee" : "#171d22",
         }}
       >
-        <img
+        {coverFailed ? <div className="project-cover-fallback" role="img" aria-label={`${project.title} project study`}><span>CASE STUDY</span><strong>{project.title}</strong><p>{project.subtitle}</p></div> : <img
           src={project.coverImageUrl}
-          alt={`${project.title} cover`}
+          alt={`${project.title} source-based illustration`}
+          onError={() => setCoverFailed(true)}
           style={{
             display: "block",
             width: "100%",
             height: featured ? 460 : 250,
-            objectFit: project.slug === "supermoodle" || project.slug === "school-user-manager" ? "contain" : "cover",
+            objectFit: editorialCover || project.slug === "supermoodle" || project.slug === "school-user-manager" ? "contain" : "cover",
             objectPosition: "center",
           }}
         />
@@ -81,7 +86,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
             {sourceBasedCovers.has(project.slug) ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
           </span>
           <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
-        </div>
+        </div> : null}
       </Link>
     );
   }
