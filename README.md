@@ -33,15 +33,3 @@ npm run build
 ## Deployment
 
 The site is deployed on Vercel and uses Neon PostgreSQL for portfolio content managed by the application backend.
-
-## Quality checks
-
-```bash
-npm test
-npm run typecheck
-npm run build
-```
-
-Publication regression tests mock Neon responses without connecting to or modifying a database. With Neon configured, database failure intentionally withholds public projects and credentials until publication status can be verified.
-
-The design audit, real-media provenance and browser evidence are in [`docs/`](docs/design-audit.md). The public UI uses one stylesheet; historical cinematic styles remain in the repository but are no longer loaded.

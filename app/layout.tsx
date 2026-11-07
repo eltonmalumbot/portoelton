@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./project-images.css";
+import "./project-catalog.css";
+import "./cinematic.css";
+import "./cinematic-parallax.css";
+import "./cinematic-light.css";
+import "./cinematic-mobile.css";
 
 export const metadata: Metadata = {
   title: "Elton Malumbot — DevOps, AI & Web Engineering",
-  other: { "page-type": "software", "site-kind": "software" },
-  description:
-    "Portfolio of Elton Malumbot: DevOps engineering, AI-assisted web development, Next.js products, Vercel deployments, Supabase, Neon PostgreSQL, Moodle LMS, and systems automation.",
+  description: "Portfolio of Elton Malumbot: DevOps engineering, AI-assisted web development, Next.js products, Vercel deployments, Supabase, Neon PostgreSQL, Moodle LMS, and systems automation.",
 };
 
 const themeScript = `(() => {
@@ -21,26 +25,11 @@ const themeScript = `(() => {
   }
 })();`;
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      data-type="software"
-      data-radius="sharp"
-      data-motion
-      suppressHydrationWarning
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
-      <body>
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
+      <body>{children}</body>
     </html>
   );
 }

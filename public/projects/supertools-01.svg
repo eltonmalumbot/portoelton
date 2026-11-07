@@ -14,7 +14,7 @@
 <rect x="112" y="252" width="216" height="46" rx="10" fill="#1d4ed8"/>
 <text x="138" y="281" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#ffffff">Bulk Users</text>
 <g font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#b7c4d1">
-<text x="138" y="343">Cohorts</text><text x="138" y="395">Courses &amp; Categories</text><text x="138" y="447">Account Audit</text><text x="138" y="499">School Managers</text><text x="138" y="551">Moodle Logs</text><text x="138" y="603">Admin Activity</text>
+<text x="138" y="343">Cohorts</text><text x="138" y="395">Courses & Categories</text><text x="138" y="447">Account Audit</text><text x="138" y="499">School Managers</text><text x="138" y="551">Moodle Logs</text><text x="138" y="603">Admin Activity</text>
 </g>
 <text x="395" y="195" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#0f172a">Moodle Operations Dashboard</text>
 <text x="395" y="228" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748b">Preview-first workflows for safer LMS administration.</text>
