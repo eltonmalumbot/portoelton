@@ -19,8 +19,10 @@ npm install --prefix work/qa-tools playwright @axe-core/playwright
 npm run build
 npm run start -- --port 3003
 NODE_PATH="$PWD/work/qa-tools/node_modules" CHROME_PATH=/usr/bin/chromium \
-  node docs/review/browser-qa.cjs http://127.0.0.1:3003 work/browser-qa
+  node docs/review/browser-qa.cjs http://127.0.0.1:3003
 ```
+
+The output directory is fixed to `work/browser-qa` inside the repository; the CLI accepts only the target URL.
 
 It checks search, combined filters, all visible case-study routes, keyboard controls, theme persistence, on-demand previews, image errors, 404 behavior and reduced motion. It captures screenshots and runs WCAG A/AA checks on the homepage and the two detailed engineering studies at 390, 768, 1024 and 1440 pixels in both themes.
 

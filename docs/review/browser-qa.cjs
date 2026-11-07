@@ -1,10 +1,12 @@
 const { chromium } = require("playwright");
 const { expect } = require("playwright/test");
 const AxeBuilder = require("@axe-core/playwright").default;
-const fs = require("fs");
+const fs = require("node:fs");
 const assert = require("node:assert/strict");
 const base = process.argv[2] || "http://127.0.0.1:3003";
-const dir = process.argv[3] || "work/browser-qa";
+const path = require("node:path");
+// Output is fixed inside the repository; CLI input cannot choose a filesystem path.
+const dir = path.resolve(__dirname, "../../work/browser-qa");
 fs.mkdirSync(dir, { recursive: true });
 const results = {
   base,

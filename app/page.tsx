@@ -102,11 +102,8 @@ export default async function Home() {
             <span>{profile.organizationName ?? "BPK PENABUR Jakarta"}</span>
           </p>
           <p className="profile-note">
-            Infrastructure operations.
-            <br />
-            Full-stack products.
-            <br />
-            Practical automation.
+            Infrastructure operations. Full-stack products. Practical
+            automation.
           </p>
         </aside>
       </section>
