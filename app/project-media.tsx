@@ -7,6 +7,7 @@ import Image from "next/image";
 import type { Project } from "../data/projects";
 
 const sourceBasedCovers = new Set([
+  "bpk-penabur-moodle-operations",
   "commuterline-ai",
   "telaah",
   "supermoodle",

@@ -10,6 +10,7 @@ type GalleryMediaProps = {
 };
 
 const sourceBasedCovers = new Set([
+  "bpk-penabur-moodle-operations",
   "commuterline-ai",
   "telaah",
   "supermoodle",

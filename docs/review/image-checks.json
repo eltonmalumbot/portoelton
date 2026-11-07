@@ -1,0 +1,226 @@
+{
+  "count": 44,
+  "failed": [],
+  "checks": [
+    {
+      "src": "/certificates/ccep-2026-summary.svg",
+      "width": 1200,
+      "height": 780
+    },
+    {
+      "src": "/elton-profile.jpg",
+      "width": 300,
+      "height": 300
+    },
+    {
+      "src": "/elton-profile.png",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "/elton-profile.svg",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "src": "/projects/bpk-penabur-moodle-operations/cover.svg",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/projects/bpk-penabur-moodle-operations/cover.webp",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/projects/carisekolah-01.svg",
+      "width": 225,
+      "height": 150
+    },
+    {
+      "src": "/projects/cariskolah/live-capture.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "src": "/projects/cariskolah-01.svg",
+      "width": 225,
+      "height": 150
+    },
+    {
+      "src": "/projects/cariskolah-02.svg",
+      "width": 171,
+      "height": 150
+    },
+    {
+      "src": "/projects/commuterline-ai/cover.svg",
+      "width": 1200,
+      "height": 720
+    },
+    {
+      "src": "/projects/elton-office/activity-log.avif",
+      "width": 1600,
+      "height": 1189
+    },
+    {
+      "src": "/projects/elton-office/cover.avif",
+      "width": 1600,
+      "height": 1006
+    },
+    {
+      "src": "/projects/elton-office/orion-supervisor.avif",
+      "width": 900,
+      "height": 746
+    },
+    {
+      "src": "/projects/elton-office/task-board.avif",
+      "width": 1600,
+      "height": 611
+    },
+    {
+      "src": "/projects/evergreen-life/live-capture.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "src": "/projects/moodle-service-portal/cover.webp",
+      "width": 480,
+      "height": 320
+    },
+    {
+      "src": "/projects/moodle-service-portal/stats.webp",
+      "width": 480,
+      "height": 115
+    },
+    {
+      "src": "/projects/moodle-service-portal/users.webp",
+      "width": 480,
+      "height": 461
+    },
+    {
+      "src": "/projects/msp-01.svg",
+      "width": 225,
+      "height": 150
+    },
+    {
+      "src": "/projects/msp-02.svg",
+      "width": 156,
+      "height": 150
+    },
+    {
+      "src": "/projects/msp-logo.svg",
+      "width": 300,
+      "height": 100
+    },
+    {
+      "src": "/projects/penaburcombat/live-capture.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "src": "/projects/peoplelens/cover.svg",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/projects/pindailoker/live-capture.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "src": "/projects/pindailoker-01.svg",
+      "width": 225,
+      "height": 150
+    },
+    {
+      "src": "/projects/prankjessica/live-capture.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "src": "/projects/prankjessica-01.svg",
+      "width": 267,
+      "height": 150
+    },
+    {
+      "src": "/projects/project-handoff-hub/cover.svg",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/projects/school-user-manager/workflow.svg",
+      "width": 1200,
+      "height": 720
+    },
+    {
+      "src": "/projects/supermoodle/workflow.svg",
+      "width": 1200,
+      "height": 720
+    },
+    {
+      "src": "/projects/supertools/bulk-users.webp",
+      "width": 360,
+      "height": 244
+    },
+    {
+      "src": "/projects/supertools/cover.webp",
+      "width": 360,
+      "height": 152
+    },
+    {
+      "src": "/projects/supertools-01.svg",
+      "width": 267,
+      "height": 150
+    },
+    {
+      "src": "/projects/supertools-02.svg",
+      "width": 222,
+      "height": 150
+    },
+    {
+      "src": "/projects/supertools-logo.svg",
+      "width": 300,
+      "height": 100
+    },
+    {
+      "src": "/projects/supertools-overview.svg",
+      "width": 267,
+      "height": 150
+    },
+    {
+      "src": "/projects/telaah/cover.svg",
+      "width": 1200,
+      "height": 720
+    },
+    {
+      "src": "/projects/telaah/source-favicon.svg",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "src": "/projects/unifair/cover.webp",
+      "width": 480,
+      "height": 253
+    },
+    {
+      "src": "/projects/unifair/student-view.webp",
+      "width": 480,
+      "height": 213
+    },
+    {
+      "src": "/projects/unifair-01.svg",
+      "width": 225,
+      "height": 150
+    },
+    {
+      "src": "/projects/unifair-02.svg",
+      "width": 300,
+      "height": 133
+    },
+    {
+      "src": "/projects/unifair-logo.svg",
+      "width": 300,
+      "height": 100
+    }
+  ]
+}

@@ -83,6 +83,13 @@ function db() {
   return process.env.DATABASE_URL ? neon(process.env.DATABASE_URL) : null;
 }
 
+// Preserve legacy Neon media URLs while displaying an honest process cover.
+function resolveProjectImage(url?: string): string | undefined {
+  return url === "/projects/bpk-penabur-moodle-operations/cover.webp"
+    ? "/projects/bpk-penabur-moodle-operations/cover.svg"
+    : url;
+}
+
 function mapProject(row: any): Project {
   return {
     slug: row.slug,
@@ -111,20 +118,21 @@ function mapProject(row: any): Project {
     repoUrl: row.repo_url || undefined,
     repoPrivate: row.repo_private,
     pluginNote: row.plugin_note || undefined,
-    coverImageUrl:
+    coverImageUrl: resolveProjectImage(
       row.slug === "elton-office"
         ? "/projects/elton-office/cover.avif"
         : row.resolved_cover_image_url ||
-          row.cover_image_url ||
-          (row.slug === "commuterline-ai"
-            ? "/projects/commuterline-ai/cover.svg"
-            : row.slug === "telaah"
-              ? "/projects/telaah/cover.svg"
-              : row.slug === "supermoodle"
-                ? "/projects/supermoodle/workflow.svg"
-                : row.slug === "school-user-manager"
-                  ? "/projects/school-user-manager/workflow.svg"
-                  : undefined),
+            row.cover_image_url ||
+            (row.slug === "commuterline-ai"
+              ? "/projects/commuterline-ai/cover.svg"
+              : row.slug === "telaah"
+                ? "/projects/telaah/cover.svg"
+                : row.slug === "supermoodle"
+                  ? "/projects/supermoodle/workflow.svg"
+                  : row.slug === "school-user-manager"
+                    ? "/projects/school-user-manager/workflow.svg"
+                    : undefined),
+    ),
     status: row.status,
   };
 }
@@ -307,8 +315,8 @@ export async function getProjectImages(slug: string) {
     `;
     // The route resolves publication before requesting images.
     const images = (rows as any[])
-      .map((r) => r.image_url)
-      .filter(Boolean)
+      .map((r) => resolveProjectImage(r.image_url))
+      .filter((url): url is string => Boolean(url))
       // Suppress the unrelated Moodle upload that was accidentally attached to Elton Office.
       .filter(
         (url) =>
