@@ -7,6 +7,8 @@ const projectLogos: Record<string, string> = {
   "moodle-service-portal": "/projects/msp-logo.svg",
 };
 
+const sourceBasedCovers = new Set(["commuterline-ai", "telaah", "supermoodle", "school-user-manager", "project-handoff-hub", "peoplelens"]);
+
 const internalMedia: Record<string, { label: string; detail: string }> = {
   "elton-office": {
     label: "AI AGENT OS · PRIVATE SOURCE",
@@ -76,7 +78,7 @@ export default function ProjectMedia({ project, featured = false }: { project: P
           }}
         >
           <span style={{ fontSize: 9, letterSpacing: ".12em", opacity: .72 }}>
-            {project.slug === "commuterline-ai" || project.slug === "telaah" || project.slug === "supermoodle" || project.slug === "school-user-manager" ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
+            {sourceBasedCovers.has(project.slug) ? "SOURCE-BASED COVER • NOT A SCREENSHOT" : "PROJECT DOCUMENTATION"}
           </span>
           <strong style={{ fontSize: 12, textAlign: "right" }}>{project.title}</strong>
         </div>
