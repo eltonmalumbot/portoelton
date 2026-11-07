@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "setup:design-skill": "npx --yes skills add Leonxlnx/taste-skill --skill design-taste-frontend --agent codex --copy --yes",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test tests/*.test.cjs"
+    "setup:design-skill": "npx --yes skills add Leonxlnx/taste-skill --skill design-taste-frontend --agent codex --copy --yes"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
