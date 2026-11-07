@@ -1,13 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-<title id="title">PROJECT HANDOFF HUB case study cover</title>
-<desc id="desc">Original source-based conceptual graphic for the portfolio case study; not a screenshot of the application.</desc>
-<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0a1527"/><stop offset="1" stop-color="#142942"/></linearGradient><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern></defs>
-<rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/>
-<rect x="52" y="52" width="1096" height="571" rx="28" fill="#102035" stroke="#6e86a2" stroke-opacity=".3"/>
-<rect x="80" y="85" width="11" height="11" rx="5" fill="#5ab8e8"/><text x="105" y="96" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" letter-spacing="3" fill="#b7cce3">PORTFOLIO CASE STUDY / CONCEPTUAL DIAGRAM</text>
-<text x="80" y="190" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="49" fill="#f0f6ff">PROJECT HANDOFF HUB</text>
-<text x="80" y="233" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#adc3dd">GitHub → Checkpoints → Verified Handoff</text>
-<rect x="82" y="305" width="340" height="178" rx="20" fill="#1a314b" stroke="#5ab8e8" stroke-opacity=".50"/><text x="103" y="347" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.3" fill="#5ab8e8">STEP 01</text><text x="103" y="407" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#fff">GITHUB REPO</text><path d="M424 398h25m-7-7 7 7-7 7" stroke="#5ab8e8" stroke-width="3" fill="none"/><rect x="452" y="305" width="340" height="178" rx="20" fill="#1a314b" stroke="#5ab8e8" stroke-opacity=".50"/><text x="473" y="347" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.3" fill="#5ab8e8">STEP 02</text><text x="473" y="407" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#fff">CHRONOLOGICAL CHECKPOINTS</text><path d="M794 398h25m-7-7 7 7-7 7" stroke="#5ab8e8" stroke-width="3" fill="none"/><rect x="822" y="305" width="340" height="178" rx="20" fill="#1a314b" stroke="#5ab8e8" stroke-opacity=".50"/><text x="843" y="347" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.3" fill="#5ab8e8">STEP 03</text><text x="843" y="407" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#fff">13-SECTION MARKDOWN HANDOFF</text>
-<text x="82" y="548" font-family="Arial,Helvetica,sans-serif" font-size="19" letter-spacing="1.6" fill="#d4e7fc">LARAVEL · LIVEWIRE · POSTGRESQL</text>
-<text x="82" y="584" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#829bb5">Source-based illustration · Not a screenshot · No production data</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="cover-title cover-description">
+<title id="cover-title">Project Handoff Hub portfolio case study</title>
+<desc id="cover-description">Editorial process illustration of project checkpoints, GitHub read-only synchronization, and structured Markdown handoffs. Not an application screenshot.</desc>
+<rect width="1200" height="675" fill="#171D22"/>
+<rect x="0" y="0" width="12" height="675" fill="#D6B278"/>
+<path d="M66 88h1068M66 588h1068" stroke="#535A5B" stroke-width="1.5"/>
+<text x="66" y="70" font-family='Arial, sans-serif' font-size='15' font-weight='700' letter-spacing='2.5' fill='#C9D1CF'>EM / ENGINEERING CASE STUDIES</text>
+<text x="1134" y="70" text-anchor='end' font-family='Arial, sans-serif' font-size='15' letter-spacing='1.6' fill='#A8B4B2'>01 / DEVELOPER PRODUCTIVITY</text>
+<text x="66" y="208" font-family='Georgia, Times New Roman, serif' font-size='83' fill='#F2F0E9'>Project</text>
+<text x="66" y="309" font-family='Georgia, Times New Roman, serif' font-size='83' fill='#F2F0E9'>Handoff</text>
+<text x="66" y="410" font-family='Georgia, Times New Roman, serif' font-size='83' fill='#D6B278'>Hub.</text>
+<text x="66" y="481" font-family='Arial, sans-serif' font-size='24' fill='#DCE2DD'>Keep the work. Keep the context.</text>
+<text x="66" y="540" font-family='Arial, sans-serif' font-size='15' font-weight='600' letter-spacing='1.2' fill='#D6B278'>LARAVEL  /  GITHUB API  /  POSTGRESQL</text>
+<rect x="661" y="137" width="472" height="400" rx="8" fill="#242D32" stroke="#525F60" stroke-width="2"/>
+<text x="695" y="180" font-family='Arial, sans-serif' font-size='15' letter-spacing='2' font-weight='700' fill='#D6B278'>PROJECT CONTINUITY</text>
+<line x1="724" y1="223" x2="724" y2="461" stroke="#6A7C79" stroke-width="2"/>
+<circle cx="724" cy="244" r="10" fill="#D6B278"/>
+<circle cx="724" cy="344" r="10" fill="#D6B278"/>
+<circle cx="724" cy="444" r="10" fill="#D6B278"/>
+<text x="758" y="239" font-family='Arial, sans-serif' font-size='14' font-weight='700' letter-spacing='1.4' fill='#D6B278'>01 / SYNC</text>
+<text x="758" y="268" font-family='Arial, sans-serif' font-size='21' fill='#E7EBE8'>GitHub metadata, read-only</text>
+<text x="758" y="339" font-family='Arial, sans-serif' font-size='14' font-weight='700' letter-spacing='1.4' fill='#D6B278'>02 / CAPTURE</text>
+<text x="758" y="368" font-family='Arial, sans-serif' font-size='21' fill='#E7EBE8'>Branch, SHA, tests, blockers</text>
+<text x="758" y="439" font-family='Arial, sans-serif' font-size='14' font-weight='700' letter-spacing='1.4' fill='#D6B278'>03 / HAND OFF</text>
+<text x="758" y="468" font-family='Arial, sans-serif' font-size='21' fill='#E7EBE8'>13-section Markdown record</text>
+<text x="695" y="514" font-family='Arial, sans-serif' font-size='12' letter-spacing='1.1' fill='#A7B7B2'>NO AUTO-MERGE  /  NO AUTO-DEPLOY</text>
+<text x="66" y="630" font-family='Arial, sans-serif' font-size='14' letter-spacing='1.2' fill='#B6BDBA'>CASE STUDY  /  SOURCE-BASED WORKFLOW ILLUSTRATION</text>
+<text x="1134" y="630" text-anchor='end' font-family='Arial, sans-serif' font-size='14' font-weight='700' letter-spacing='1.1' fill='#D6B278'>QA-TESTED PROTOTYPE</text>
 </svg>
