@@ -62,8 +62,8 @@ export default function ProjectMedia({ project, featured = false }: { project: P
             objectFit: editorialCover || project.slug === "supermoodle" || project.slug === "school-user-manager" ? "contain" : "cover",
             objectPosition: "center",
           }}
-        />
-        <div
+        />}
+        {!editorialCover && !coverFailed ? <div
           style={{
             position: "absolute",
             left: featured ? 22 : 16,
